@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第一课：STEP 为什么从需求阶段开始？</title>
+  <link rel="stylesheet" href="../assets/teaching.css">
+</head>
+<body><main>
+  <p class="meta">软件测试课程 · 第一课 · 学校选课系统案例</p>
+  <h1>STEP 为什么从需求阶段开始？</h1>
+  <p>这一课结束时，你要能解释一件事：程序还没写，测试人员已经能发现什么问题。</p>
+  <p class="idea">STEP 把测试组织成贯穿软件生命周期的工作。需求阶段就准备测试，执行后既评价软件，也评价测试过程。</p>
+  <p>STEP 的全称为 Systematic Test and Evaluation Process，中文可译为“系统化测试与评价过程”。ISTQB 将它介绍为一种内容参考模型，团队可以据此选择需要改进的测试活动。<a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62">来源：ISTQB 2012 大纲第 5.7 节</a>。</p>
+  <h2>先看一句看似明确的需求</h2>
+  <div class="example">
+    <p>以下为教学示例，并非来源中的原案例。</p>
+    <p>学校选课系统的需求写着：“学生可以退课。”</p>
+    <p>如果你要设计测试，就必须知道退课成功的条件。截止日期是什么？退课后是否释放名额？过了截止日期怎么办？</p>
+    <p>现在连“期望结果”都写不出来，说明需求需要补充。这个问题在编码前就能发现。</p>
+  </div>
+  <p>STEP 强调尽早依据需求设计测试，用测试帮助检查需求的明确性。这里的“test then code”包括先分析和设计测试；实际执行程序，需要相应实现。不要把它直接等同于 TDD。<a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62">来源：ISTQB 第 5.7 节</a>。</p>
+  <h2>用选课系统理解三个主要阶段</h2>
+  <p>经典 STEP 方法分为以下三个阶段，各测试层级都可以使用。它们的活动会随开发进展重叠和补充。<a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44">来源：Systematic Software Testing，第 14 至 16 页</a>。</p>
+  <ol>
+    <li><strong>规划策略。</strong>确定要测什么、优先级和完成条件。案例中优先关注超额选课、重复选课和时间冲突。</li>
+    <li><strong>准备测试资产。</strong>明确测试目标，设计并实现用例、数据、操作步骤和环境。案例中准备“只剩一个名额，两名学生同时提交”的用例。</li>
+    <li><strong>度量行为。</strong>执行测试，检查测试是否充分，评价软件和测试过程。案例中观察是否只成功一人，并检查自己有没有遗漏并发场景。</li>
+  </ol>
+  <p>testware 指支持测试的工作产物，例如计划、用例、数据和操作步骤。<a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=47">来源：本书第 17 页</a>。</p>
+  <h2>评价时，你在回答两个问题</h2>
+  <p>“系统有没有超额选课？”是在评价软件。“我们为什么没有设计并发用例？”是在评价测试过程。修复程序后还要补充测试，帮助后续版本发现同类问题。</p>
+  <p>STEP 的价值在于有组织地准备测试和尽早反馈。实施时也要投入人员协作、计划维护和测试数据准备的成本。它不能保证没有缺陷，也不能用一个通过率代替对剩余风险的判断。</p>
+  <h2>先回忆，再展开答案</h2>
+  <p>先用自己的话回答。展开内容仅用于反馈，不是对你掌握程度的判定。</p>
+  <details><summary>第一题：代码还没写，“学生可以退课”能测试什么？</summary><p>可以检查需求是否明确、完整、可验证。设计用例时明确截止时间、名额处理和超期行为，推动需求补充。</p></details>
+  <details><summary>第二题：准备两名学生账号，主要属于哪个阶段？</summary><p>准备测试资产。这是准备测试数据；规划测试优先级属于规划策略，运行并观察结果属于度量行为。</p></details>
+  <details><summary>第三题：所有已执行用例通过，能说明系统没有缺陷吗？</summary><p>不能。结果只覆盖这些用例和执行条件。可能没有覆盖只剩一个名额的并发情况，因此还需要检查测试充分性和剩余风险。</p></details>
+  <footer>
+    <p><a href="../reference/step-overview.html">复习三阶段、八项活动和术语</a></p>
+    <p>推荐原始阅读：<a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62">ISTQB 2012 大纲第 5.7 节</a>。先读两页即可。</p>
+    <p>回到聊天，把你的解释或困惑发给我。下一课根据你的回答继续。</p>
+  </footer>
+</main></body></html>
