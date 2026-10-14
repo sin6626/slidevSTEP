@@ -1,0 +1,93 @@
+{
+  "checkedOn": "2026-10-14",
+  "kind": "historical evidence copied without modification",
+  "detailsBaseHead": "a924f121440c5d87baaa4236d5747d45d59661fb",
+  "detailsNote": "tested source included uncommitted changes; identify it with the per-file hashes in details-source.json, not base HEAD alone",
+  "files": [
+    {
+      "file": "details-hidden-input.png",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-caret-2026-10-11/playground-right-r0-reopened.png",
+      "sha256": "58bdad804f0b427098e0a445ca0fdaff8d3d88304636943e2cb952a282ed0d98"
+    },
+    {
+      "file": "details-hidden-input.json",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-caret-2026-10-11/playground-right-r0.json",
+      "sha256": "b7aa82542a72bf4291799e56cff297f4c4b844cc36c71a37acd03c2ee6693dbd"
+    },
+    {
+      "file": "details-outer-caret.png",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/playground-outer-visible-caret.png",
+      "sha256": "e449b4f2e83f432f178001d60ab53d7a282d6f723f2c836724a6650516f375d8"
+    },
+    {
+      "file": "details-outer-caret.json",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/playground-outer-visible-caret.json",
+      "sha256": "40562f6c8bd3be3e42646cae023e0cb3a6c87b7cd2fbe0b6156cbf5dfa188e93"
+    },
+    {
+      "file": "details-inner-caret.png",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/playground-inner-visible-caret.png",
+      "sha256": "e7ab39be20dedddf95fd30abf75632181529643c9efcfe7c5a218fbe21338a6f"
+    },
+    {
+      "file": "details-inner-caret.json",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/playground-inner-visible-caret.json",
+      "sha256": "f2768978d0e67f181ee0cb982e33edc369ff75733687a4fc7fd7d3c911c9d633"
+    },
+    {
+      "file": "details-structure.log",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/structure-final.log",
+      "sha256": "a9f23c811356b4bb70e7405e50c1d23671fe8a86de8d6f5826124bc24f2d024f"
+    },
+    {
+      "file": "details-selection.log",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/selection-final.log",
+      "sha256": "458012a123816aa83e0a97f7cdf64df17fabc2c04a5e9be7200a52063d56dd30"
+    },
+    {
+      "file": "details-repeat.log",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/five-repeats.log",
+      "sha256": "c97c42e0c67215fbe76deb63254c8c2ede9bf656a2bcd4daa0661931051818a7"
+    },
+    {
+      "file": "details-regression.log",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/regression.log",
+      "sha256": "7689847a8a3926cec3d6d8d8e34092e781988bec42cf579dbfd6b12b9ec4bb69"
+    },
+    {
+      "file": "details-handoff-before.log",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/handoff-red.log",
+      "sha256": "eeeb313c0dc01e321d44c4079fa7238396a74be2aae5f3cd8fe9b7100b14bc15"
+    },
+    {
+      "file": "details-source.json",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/final-source.json",
+      "sha256": "6efffd918a533a9252e9a02b68cc44cbd90abbfee538a77b68e5933dba160275"
+    },
+    {
+      "file": "list-circle.png",
+      "original": "/Users/sin/Documents/Project/PlateCompany/plate/docs/plans/artifacts/list-style-diagnosis/Circle.png",
+      "sha256": "a82bacd9326940ab0aaf639abae4bd6d848f01abae7ec2c5fe950c14fd25866b"
+    },
+    {
+      "file": "list-diagnosis.log",
+      "original": "/Users/sin/Documents/Project/PlateCompany/plate/docs/plans/artifacts/list-style-diagnosis/replay.log",
+      "sha256": "2b3b9a4bd00cbd0ce4f100901866aa3a29671c032b87bc3b81db57aff4755e3b"
+    },
+    {
+      "file": "details-disclosure.spec.txt",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/apps/www/tests/browser/details-disclosure.spec.ts",
+      "sha256": "a9f19f36ce1ccae9e7db1765b2f3d26dd3e7317c5d62e5247ea040428c065ce5"
+    },
+    {
+      "file": "list-diagnosis.spec.txt",
+      "original": "/Users/sin/Documents/Project/PlateCompany/plate/docs/plans/artifacts/list-style-diagnosis/replay.spec.ts",
+      "sha256": "4c38fca058624b67821a8559f5f413bdb4e50f5cfe4bc6db91f225d1b06cc27c"
+    },
+    {
+      "file": "details-plan.md",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/plan.md",
+      "sha256": "0f39cad0ac071aff750c871ccd64af74523b3650c04797588b6830607e815d7c"
+    }
+  ]
+}

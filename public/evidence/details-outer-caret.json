@@ -1,0 +1,45 @@
+{
+  "model": {
+    "anchor": {
+      "offset": 25,
+      "path": [
+        29,
+        0,
+        0
+      ]
+    },
+    "focus": {
+      "offset": 25,
+      "path": [
+        29,
+        0,
+        0
+      ]
+    }
+  },
+  "dom": {
+    "anchor": {
+      "path": [
+        29,
+        0,
+        0
+      ],
+      "offset": 25
+    },
+    "focus": {
+      "path": [
+        29,
+        0,
+        0
+      ],
+      "offset": 25
+    }
+  },
+  "focused": true,
+  "caretColor": "oklch(0.922 0 0)",
+  "rect": {
+    "x": 494.484375,
+    "y": 371.53125,
+    "height": 18
+  }
+}

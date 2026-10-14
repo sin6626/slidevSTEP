@@ -1,0 +1,31 @@
+
+> www@0.0.1 test:www-browser:chromium /Users/sin/.codex/worktrees/8c90/plate/apps/www
+> playwright test --config playwright.config.ts --project=chromium "tests/browser/details-caret.spec.ts" "tests/browser/details-selection.spec.ts" "tests/browser/text-selection-scroll.spec.ts" "tests/browser/clipboard.spec.ts" "tests/browser/link-floating-toolbar.spec.ts" "-g" "collapsed Details body|middle content|selects only a Details body row|HTML clipboard preserves heading, bold and link via native|link:floating-toolbar-visible-boundary"
+
+
+Running 20 tests using 1 worker
+
+(node:73789) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/clipboard.spec.ts:5:7 › HTML clipboard preserves heading, bold and link via native (1.3s)
+  ✓   2 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps Backspace outside a collapsed Details body (1.3s)
+  ✓   3 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps NestedBackspace outside a collapsed Details body (1.3s)
+  ✓   4 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps DeleteParagraph outside a collapsed Details body (1.3s)
+  ✓   5 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps ArrowRight outside a collapsed Details body (994ms)
+  ✓   6 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps ArrowLeft outside a collapsed Details body (979ms)
+  ✓   7 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps Shift+ArrowRight outside a collapsed Details body (1.4s)
+  ✓   8 [chromium] › tests/browser/details-caret.spec.ts:37:9 › details-demo keeps Shift+ArrowLeft outside a collapsed Details body (1.3s)
+  ✓   9 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps Backspace outside a collapsed Details body (2.4s)
+  ✓  10 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps NestedBackspace outside a collapsed Details body (2.4s)
+  ✓  11 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps DeleteParagraph outside a collapsed Details body (2.3s)
+  ✓  12 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps ArrowRight outside a collapsed Details body (3.6s)
+  ✓  13 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps ArrowLeft outside a collapsed Details body (2.9s)
+  ✓  14 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps Shift+ArrowRight outside a collapsed Details body (2.7s)
+  ✓  15 [chromium] › tests/browser/details-caret.spec.ts:37:9 › playground keeps Shift+ArrowLeft outside a collapsed Details body (3.4s)
+  ✓  16 [chromium] › tests/browser/details-selection.spec.ts:6:7 › selects only a Details body row on /blocks/details-demo (2.7s)
+  ✓  17 [chromium] › tests/browser/details-selection.spec.ts:6:7 › selects only a Details body row on /blocks/playground (3.9s)
+  ✓  18 [chromium] › tests/browser/link-floating-toolbar.spec.ts:150:5 › link:floating-toolbar-visible-boundary (9.3s)
+  ✓  19 [chromium] › tests/browser/text-selection-scroll.spec.ts:360:7 › keeps every downward text-selection focus visible from middle content with held arrow (6.1s)
+  ✓  20 [chromium] › tests/browser/text-selection-scroll.spec.ts:360:7 › keeps every downward text-selection focus visible from middle content with individual presses (5.8s)
+
+  20 passed (58.1s)

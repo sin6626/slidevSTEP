@@ -1,0 +1,10 @@
+
+> platejs@54.0.0-beta.1 test:partition:details /Users/sin/.codex/worktrees/8c90/plate/packages/platejs
+> node ../../tooling/scripts/run-entrypoint-task.mjs test platejs details
+
+bun test v1.3.12 (700fc117)
+
+ 32 pass
+ 0 fail
+ 73 expect() calls
+Ran 32 tests across 2 files. [1301.00ms]

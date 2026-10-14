@@ -1,0 +1,11 @@
+{
+  "head": "a924f121440c5d87baaa4236d5747d45d59661fb",
+  "files": {
+    "packages/platejs/src/features/details/lib/BaseDetailsPlugin.ts": "bf5fb8ba49a6b42f19e7b60e3b242d1626a8bf3b73d5e713575d6a4a5126646c",
+    "packages/platejs/src/features/details/lib/BaseDetailsCommands.spec.ts": "e963da97f936988ab403bfc886be356935525e2f3e5158e568dee1f159f89a0d",
+    "packages/plitejs/src/react/editable/selection-controller.ts": "6675e1cb87a1c25d2111d318fc5f1fb3bfca893231246af5a2cc910485ccd442",
+    "packages/plitejs/test/react/selection-runtime-contract.test.ts": "64b4ae110e508e30a602a6b6210c4e0ab33bca5271a66fe2426fed95a48a342d",
+    "apps/www/tests/browser/details-disclosure.spec.ts": "a9f19f36ce1ccae9e7db1765b2f3d26dd3e7317c5d62e5247ea040428c065ce5",
+    "apps/www/tests/browser/details-caret.spec.ts": "2f9ff25abbd70ed4d6fc1942b0a401829e7e2af08d8de1c2d6788b67919c1de3"
+  }
+}

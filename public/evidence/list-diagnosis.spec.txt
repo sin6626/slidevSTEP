@@ -1,0 +1,25 @@
+import { createBrowserEditorHarness, recordBrowserRuntimeErrors } from '@platejs/test/playwright';
+import { test } from '@playwright/test';
+
+test('diagnose list-demo marker styles', async ({ page }) => {
+  const errors = recordBrowserRuntimeErrors(page);
+  try {
+    await page.goto('/blocks/list-demo');
+    const root = page.locator('[data-editor="true"][contenteditable="true"]').first();
+    const editor = createBrowserEditorHarness(page, 'list-style-diagnosis', root);
+    await editor.ready({ editor: 'visible' });
+    const item = root.getByText('Disc 1', { exact: true });
+    await item.click();
+    const menu = page.locator('[role="group"]').filter({ has: page.locator('svg.lucide-list') }).last().locator('button').last();
+    for (const style of ['Circle', 'Square']) {
+      await menu.click();
+      await page.getByRole('menuitem', { name: style, exact: true }).click();
+      console.log(JSON.stringify({ selected: style, value: (await editor.get.modelValue()).children[3], rendered: await item.evaluate(el => {
+        const block = el.closest('[data-editor-node="element"]') ?? el.closest('[role="listitem"]') ?? el;
+        return { html: block.outerHTML, marker: getComputedStyle(block).listStyleType };
+      }) }));
+      await page.screenshot({ path: `../../docs/plans/artifacts/list-style-diagnosis/${style}.png`, fullPage: true });
+    }
+    errors.assertNone();
+  } finally { errors.stop(); }
+});

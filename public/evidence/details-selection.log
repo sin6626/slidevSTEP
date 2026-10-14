@@ -1,0 +1,104 @@
+
+> plitejs@0.0.1 test:react /Users/sin/.codex/worktrees/8c90/plate/packages/plitejs
+> vitest run --config ./vitest.config.mjs "test/react/selection-runtime-contract.test.ts" "test/react/selection-controller-contract.test.ts" "test/react/selection-reconciler-contract.test.ts" "--reporter=verbose" "--silent=false"
+
+
+ RUN  v4.1.9 /Users/sin/.codex/worktrees/8c90/plate/packages/plitejs
+
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports model-owned selection but skips DOM-owned selection 1ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports a control selection after handing off a native pointer selection 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports expanded model selection after content-changing commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > subscribes to model selection and structural changes only 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > skips DOM export when text input caret repair owns collapsed selection 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports repair-induced text selection after the DOM commit 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > composition text input still exports model selection normally 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > cancelled selectionchange flush clears pending DOM import 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > keydown preserves model selection without flushing stale DOM selection 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > model-owned repair selectionchange skips stale DOM import work only after model-owned repair 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > wires selector listener to DOM export policy 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports a custom DOM projection after a DOM-owned selection commit 1ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > restores a custom DOM projection after a text-only document commit 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > defers DOM export for content-changing commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > cancels deferred DOM export on unsubscribe 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > replaces a pending deferred DOM export without retaining stale work 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > does not notify DOM export listener for repaired text input commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > preserves pending native text insert repair through selectionchange 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > repairs pending native text insert during model-owned selectionchange 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > does not notify DOM export listener for synced text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports command-owned text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > composition still exports synced text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > skips DOM export for selections owned by a synthetic viewport-backed lane 0ms
+ ✓ test/react/selection-controller-contract.test.ts > selection import executes only for import-dom policy 1ms
+ ✓ test/react/selection-controller-contract.test.ts > model-owned text input guard rejects stale native collapsed ranges 0ms
+ ✓ test/react/selection-controller-contract.test.ts > selection export executes only for export-model policy 0ms
+ ✓ test/react/selection-controller-contract.test.ts > nested editable DOM targets are owned by their closest editor root 3ms
+ ✓ test/react/selection-controller-contract.test.ts > nested editable DOM targets are interactive boundaries for containing editors 10ms
+ ✓ test/react/selection-controller-contract.test.ts > failed DOM selection export clears the updating guard 19ms
+ ✓ test/react/selection-controller-contract.test.ts > model selection export preserves a focused editor control 4ms
+ ✓ test/react/selection-controller-contract.test.ts > forced model export respects a pending Android action 4ms
+ ✓ test/react/selection-controller-contract.test.ts > native selection drag keeps DOM selection and scroll under browser ownership 7ms
+ ✓ test/react/selection-controller-contract.test.ts > view selection export clears stale native selection ranges 5ms
+ ✓ test/react/selection-controller-contract.test.ts > model selection export is owned by the matching root view only 4ms
+ ✓ test/react/selection-controller-contract.test.ts > model selection export preserves preferred collapsed DOM point 3ms
+ ✓ test/react/selection-controller-contract.test.ts > native editor-owned selectionchange clears model preference before DOM import 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native selectionchange outside the editor does not clear model preference 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native editor-owned selectionchange with unresolved Plite range keeps model preference 0ms
+ ✓ test/react/selection-controller-contract.test.ts > repair-induced editor-owned selectionchange does not clear model preference 0ms
+ ✓ test/react/selection-controller-contract.test.ts > changed expanded DOM selection can override stale programmatic origin 0ms
+ ✓ test/react/selection-controller-contract.test.ts > changed expanded DOM selection import publishes a selection commit 4ms
+ ✓ test/react/selection-controller-contract.test.ts > projected DOM selection import publishes its anchor selection commit 4ms
+ ✓ test/react/selection-controller-contract.test.ts > changed expanded DOM import ignores same, collapsed, and repair ranges 0ms
+ ✓ test/react/selection-controller-contract.test.ts > selection-move guard allows native collapse inside expanded selection 0ms
+ ✓ test/react/selection-controller-contract.test.ts > DOM selectionchange import only accepts native collapsed changes 0ms
+ ✓ test/react/selection-controller-contract.test.ts > model-owned programmatic selectionchange keeps its ownership guard 0ms
+ ✓ test/react/selection-controller-contract.test.ts > model-owned collapsed programmatic selectionchange skips DOM range resolution 1ms
+ ✓ test/react/selection-controller-contract.test.ts > selectionchange ignores detached DOM endpoints before resolving Plite range 2ms
+ ✓ test/react/selection-controller-contract.test.ts > selectionchange ignores host-removal collapse outside the editor 2ms
+ ✓ test/react/selection-controller-contract.test.ts > selectionchange ignores removed shadow host empty native selection 2ms
+ ✓ test/react/selection-controller-contract.test.ts > model-owned browser-handle selectionchange keeps its ownership guard 0ms
+ ✓ test/react/selection-controller-contract.test.ts > repair-induced selectionchange clears its origin after model repair 0ms
+ ✓ test/react/selection-controller-contract.test.ts > repair-induced text input selectionchange can keep DOM-current ownership 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native selectionchange clears its origin after import handling 0ms
+ ✓ test/react/selection-controller-contract.test.ts > pending native repair selectionchange policy suppresses stale same-path offsets and allows deliberate selections 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native selection handoff clears stale programmatic text input guards 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native selection preference preserves short model-owned input guard 0ms
+ ✓ test/react/selection-controller-contract.test.ts > native insertText preserves explicit model-owned input guards 0ms
+ ✓ test/react/selection-controller-contract.test.ts > model-command text input forces model ownership 0ms
+ ✓ test/react/selection-controller-contract.test.ts > browser-handle text input can keep the native fast path 0ms
+ ✓ test/react/selection-controller-contract.test.ts > repair-induced text input remains model-owned after its guard settles 0ms
+ ✓ test/react/selection-controller-contract.test.ts > browser-handle and repair-induced selection preferences clear stale model-owned text guards 0ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > initial unselected mounts do not read native selection between sibling view layouts 20ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > explicit blur cancels Android selection reapplication before-frame 11ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > explicit blur cancels Android selection reapplication after-frame 4ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput preserves pending native text repair selection over mismatched DOM selection 14ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput keeps a projected view selection authoritative over the DOM caret 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput ignores stale backward target range while model owns insert 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput preserves model selection for decorated text target ranges 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > mouse down clears stale model-owned text input guards without reclassifying the click 1ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > mouse down ends a stale keyboard selection-move intent 1ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput returns same-path pending native text repair DOM range without importing it 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput imports same-path native selection when pending repair owns a different offset 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput imports backward native text caret when no pending repair owns it 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput ignores an ahead DOM caret while text input is model-owned 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput ignores repair-induced backward text caret when no pending repair owns it 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput ignores text host target ranges while the node map is dirty 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput keeps current text host target ranges while the node map is dirty 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput uses event target range instead of later live DOM selection 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput resolves block-spanning element target ranges before live selection fallback 5ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > beforeinput does not import only the first range from multiple target ranges 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler preserves node selection while clearing native selection 7ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler clears the updating guard when DOM export throws 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler clamps stale DOM range offsets after text shortening 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler keeps DOM coverage skip selections model-owned 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > DOM coverage selection materializes every covered materialize boundary with range roles 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > forced DOM coverage export rebuilds a fresh native range 2ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler scrolls the visible focus across DOM coverage (1, 1) 4ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > selection reconciler scrolls the visible focus across DOM coverage (3, +0) 3ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > read-only triple-click stays native and does not update model selection 1ms
+ ✓ test/react/selection-reconciler-contract.test.tsx > trailing click preserves an authoritative node selection 1ms
+
+ Test Files  3 passed (3)
+      Tests  91 passed (91)
+   Start at  16:41:38
+   Duration  2.56s (transform 5.10s, setup 6.00s, import 147ms, tests 198ms, environment 827ms)
+

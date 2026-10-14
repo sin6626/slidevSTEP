@@ -1,0 +1,62 @@
+
+> plitejs@0.0.1 test:react /Users/sin/.codex/worktrees/8c90/plate/packages/plitejs
+> vitest run --config ./vitest.config.mjs "test/react/selection-runtime-contract.test.ts" "--reporter=verbose" "--silent=false"
+
+
+ RUN  v4.1.9 /Users/sin/.codex/worktrees/8c90/plate/packages/plitejs
+
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports model-owned selection but skips DOM-owned selection 1ms
+ × test/react/selection-runtime-contract.test.ts > selection runtime > exports a control selection after handing off a native pointer selection 2ms
+   → expected false to be true // Object.is equality
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports expanded model selection after content-changing commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > subscribes to model selection and structural changes only 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > skips DOM export when text input caret repair owns collapsed selection 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports repair-induced text selection after the DOM commit 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > composition text input still exports model selection normally 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > cancelled selectionchange flush clears pending DOM import 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > keydown preserves model selection without flushing stale DOM selection 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > model-owned repair selectionchange skips stale DOM import work only after model-owned repair 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > wires selector listener to DOM export policy 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports a custom DOM projection after a DOM-owned selection commit 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > restores a custom DOM projection after a text-only document commit 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > defers DOM export for content-changing commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > cancels deferred DOM export on unsubscribe 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > replaces a pending deferred DOM export without retaining stale work 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > does not notify DOM export listener for repaired text input commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > preserves pending native text insert repair through selectionchange 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > repairs pending native text insert during model-owned selectionchange 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > does not notify DOM export listener for synced text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > exports command-owned text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > composition still exports synced text-only selection commits 0ms
+ ✓ test/react/selection-runtime-contract.test.ts > selection runtime > skips DOM export for selections owned by a synthetic viewport-backed lane 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/react/selection-runtime-contract.test.ts > selection runtime > exports a control selection after handing off a native pointer selection
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/react/selection-runtime-contract.test.ts:100:62
+     98|       selectionSource: 'app-owned',
+     99|     });
+    100|     expect(shouldExportModelSelectionToDOM(inputController)).toBe(true…
+       |                                                              ^
+    101|   });
+    102|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 passed (23)
+   Start at  16:32:44
+   Duration  2.22s (transform 1.59s, setup 1.89s, import 5ms, tests 5ms, environment 234ms)
+
+/Users/sin/.codex/worktrees/8c90/plate/packages/plitejs:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  plitejs@0.0.1 test:react: `vitest run --config ./vitest.config.mjs "test/react/selection-runtime-contract.test.ts" "--reporter=verbose" "--silent=false"`
+Exit status 1
