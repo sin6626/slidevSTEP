@@ -5,12 +5,18 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "check": "node scripts/check-deck.mjs"
   },
   "dependencies": {
     "@slidev/cli": "^53.0.0",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "@fontsource-variable/nunito": "^5.2.7",
+    "@proj-airi/font-chillroundm": "^0.10.2",
+    "seedrandom": "^3.0.5"
   }
 }

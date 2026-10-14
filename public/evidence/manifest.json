@@ -88,6 +88,16 @@
       "file": "details-plan.md",
       "original": "/Users/sin/.codex/worktrees/8c90/plate/docs/plans/artifacts/details-followup-2026-10-11/plan.md",
       "sha256": "0f39cad0ac071aff750c871ccd64af74523b3650c04797588b6830607e815d7c"
+    },
+    {
+      "file": "details-selection-controller.txt",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/packages/plitejs/src/react/editable/selection-controller.ts",
+      "sha256": "6675e1cb87a1c25d2111d318fc5f1fb3bfca893231246af5a2cc910485ccd442"
+    },
+    {
+      "file": "details-plugin.txt",
+      "original": "/Users/sin/.codex/worktrees/8c90/plate/packages/platejs/src/features/details/lib/BaseDetailsPlugin.ts",
+      "sha256": "bf5fb8ba49a6b42f19e7b60e3b242d1626a8bf3b73d5e713575d6a4a5126646c"
     }
   ]
 }
