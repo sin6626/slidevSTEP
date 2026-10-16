@@ -98,6 +98,87 @@
       "file": "details-plugin.txt",
       "original": "/Users/sin/.codex/worktrees/8c90/plate/packages/platejs/src/features/details/lib/BaseDetailsPlugin.ts",
       "sha256": "bf5fb8ba49a6b42f19e7b60e3b242d1626a8bf3b73d5e713575d6a4a5126646c"
+    },
+    {
+      "file": "blockselection-audio.spec.txt",
+      "original": "/Users/sin/Documents/Project/PlateCompany/plate/apps/www/tests/browser/selection-edge-scroll.spec.ts",
+      "sha256": "a75960adf408e7c38f3a4451be66986433c3df9b7f2a9cb2fce16da0e2b55800",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "blockselection-plan.md",
+      "original": "/Users/sin/Documents/Project/PlateCompany/plate/docs/plans/2026-10-14-block-selection-media-release.md",
+      "sha256": "4b8bb9aca1a4581d0ae540fd120743380b5abe2f8e04075040fbed8e1964e4df",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "plate-test-guide.md",
+      "original": "/Users/sin/Documents/Project/PlateCompany/PlateWorkResource/原始资料/PR5175-测试人员指南英文.md",
+      "sha256": "87528bbdc619ca49c07bd14c22a382f242d2cd736733780299820ed111b51861",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "plate-test-plan.md",
+      "original": "/Users/sin/Documents/Project/PlateCompany/PlateWorkResource/原始资料/PR5175-测试总计划英文.md",
+      "sha256": "1c88b45b5c686ff19d5ab8f33fab588ac1ce36d8affb6446c544f37dbe8723db",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "plate-source-status.md",
+      "original": "/Users/sin/Documents/Project/PlateCompany/PlateWorkResource/原始资料/来源与状态.md",
+      "sha256": "c9f0802d8af10edaf396ee3429178dff5b93e391eaa19c22448ae3538ffeb0dd",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "plate-work-readme.md",
+      "original": "/Users/sin/Documents/Project/PlateCompany/PlateWorkResource/README.md",
+      "sha256": "c5ea35a53f97203b0f03548b354d8408f501b190767a81eeb5cbe2342ca918ce",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "file": "blockselection-after-release.png",
+      "original": "/tmp/step-course-evidence-20261016/browser-results/selection-edge-scroll-bloc-58ba9--over-native-audio-controls-chromium-repeat4/audio-after-release.png",
+      "sha256": "4c472125b0932ac63e3c06598df1fb5943af3f92367ab41b43b93a77897b25a1",
+      "checkedOn": "2026-10-16",
+      "kind": "current source replay"
+    },
+    {
+      "file": "blockselection-replay.log",
+      "original": "/tmp/step-course-evidence-20261016/blockselection-replay.log",
+      "sha256": "7b6f224e07c636da2130624033d8f811deca10cf4d2d5f4019a06b814dbf9a5c",
+      "checkedOn": "2026-10-16",
+      "kind": "current source replay"
+    },
+    {
+      "file": "blockselection-replay.json",
+      "original": "/tmp/step-course-evidence-20261016/blockselection-replay.json",
+      "sha256": "986a2c4b5646561b3be3c4afa97263015d334f80257f3abc12158f88d9c11867",
+      "checkedOn": "2026-10-16",
+      "kind": "current source replay"
     }
-  ]
+  ],
+  "currentReport": {
+    "topic": "STEP模型及其在Plate测试实践中的应用",
+    "checkedOn": "2026-10-16",
+    "case": "BlockSelection native audio release",
+    "historicalArtifacts": "Original historical images and runner logs missing; do not quote their pass counts",
+    "files": [
+      "blockselection-audio.spec.txt",
+      "blockselection-plan.md",
+      "plate-test-guide.md",
+      "plate-test-plan.md",
+      "plate-source-status.md",
+      "plate-work-readme.md",
+      "blockselection-after-release.png",
+      "blockselection-replay.log",
+      "blockselection-replay.json"
+    ],
+    "replay": {
+      "caseCount": 1,
+      "executions": 5,
+      "passed": 5,
+      "browser": "Chromium",
+      "historicalBeforeAfter": false
+    }
+  }
 }

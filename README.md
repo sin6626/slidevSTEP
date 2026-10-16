@@ -1,18 +1,18 @@
 # STEP 模型课程报告
 
-12 页 Slidev 幻灯片，以 Plate Details 修复为主案例，列表样式诊断为补充。按 STEP 的策划、获取测试部件、测量行为三个阶段分析实际工作。
+12 页 Slidev 课程报告，面向老师和同学介绍 STEP 模型，并结合 Plate 的测试计划及 BlockSelection 音频松手案例解释三个阶段。最后一页为“谢谢大家”。
 
-使用 [luoling8192/talks](https://github.com/luoling8192/talks/tree/9282cede8f16cc0dd82e21f94b2bc7736a643a3d/packages/2026-vueconf-agent-vue-way) 的 Vue Conf 2026 模板，复用柔光背景、Nunito / 寒蝉半圆体字体、点击展开和代码版式。内容围绕真实复现、选区交接、结构修复及测试断言展开。
+继续使用 [luoling8192/talks 的 Vue Conf 2026 模板](https://github.com/luoling8192/talks/tree/9282cede8f16cc0dd82e21f94b2bc7736a643a3d/packages/2026-vueconf-agent-vue-way)，保留柔光背景、Nunito 与寒蝉半圆体字体、留白和点击展开效果。
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-打开 <http://localhost:3030>，按右方向键依次展开内容，按下方向键进入下一页；打开 <http://localhost:3030/presenter/1> 查看演讲者讲稿。
+打开 <http://localhost:3030>，按右方向键依次展开内容，按下方向键进入下一页。打开 <http://localhost:3030/presenter/1> 查看演讲者备注。
 
-内容位于 [slides.md](./slides.md)，样式位于 [style.css](./style.css)。运行 `npm run build` 构建静态站点；运行 `npm run export` 可使用 Slidev 的 PDF 导出功能。
+内容位于 [slides.md](./slides.md)，样式位于 [style.css](./style.css)。`pnpm build` 构建静态站点，`pnpm export` 使用 Slidev 的 PDF 导出功能，`pnpm check` 核对页数、备注、证据引用及文件指纹。
 
-运行 `npm run check` 核对页数、讲稿、证据引用和原始文件指纹。
+Plate 规划依据 2026-10-16 整理的固定资料快照。分工提案、待准备环境和未执行试验均保留状态说明，不作为已完成的正式测试结果。BlockSelection 的历史文档、现有测试源码和本轮实拍分开标注，运行范围见 [docs/EVIDENCE.md](./docs/EVIDENCE.md)。
 
-截图、JSON 和日志副本位于 `public/evidence/`，原路径与 SHA-256 见 `manifest.json`。结论及证据边界见 [docs/EVIDENCE.md](./docs/EVIDENCE.md)：使用已核对的历史记录，本次没有重新运行 Plate 测试；列表诊断通过不代表修复成功。
+当前幻灯片引用的证据副本位于 `public/evidence/`，原路径与 SHA-256 见 `manifest.json`。此前版本的证据继续保留在该目录，作为归档，不用于当前课程页的案例或通过结论。

@@ -7,6 +7,9 @@ const markdown = readFileSync('slides.md', 'utf8');
 const deck = parseSync(markdown, 'slides.md');
 assert.equal(deck.slides.length, 12, '报告必须保持 12 页');
 assert.ok(deck.slides.every(slide => slide.note?.trim()), '每页必须有讲稿');
+assert.ok(!/Details|列表样式/.test(markdown), '新版报告不能使用已排除的案例');
+const closingText = deck.slides.at(-1).content.replace(/<[^>]*>/g, '').replace(/[#\s]/g, '');
+assert.equal(closingText, '谢谢大家', '结束页只展示谢谢大家');
 for (const [, path] of markdown.matchAll(/(?:href|src)="(\/evidence\/[^"#]+)"/g)) {
   assert.ok(existsSync(`public${path}`), `缺少证据文件 ${path}`);
 }

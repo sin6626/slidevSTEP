@@ -95,3 +95,12 @@ figcaption { font-size: .72rem; color: #ffffff69; margin-top: .45rem; line-heigh
 .check-line p { font-size: .95rem; color: #ffffff9f; }
 .tree { color: #ffffffac; }
 .log { color: #f7dca4; font-size: .82rem; }
+
+.slidev-layout .course-cover { font-size: 2.8rem; line-height: 1.4; letter-spacing: -.03em; }
+.definition { color: #c4f5cf; font-size: 1.65rem; line-height: 1.6; margin-top: 1.8rem; }
+.course-steps { margin-top: 2rem; }
+.compact-lines .check-line { padding: .5rem 0; }
+.tool-matrix { margin-top: .4rem; }
+.tool-matrix .matrix-row { grid-template-columns: 6.5rem 1fr; gap: .8rem; padding: .65rem 0; font-size: .93rem; }
+.block-case { margin-top: .9rem; margin-bottom: .65rem; }
+.block-case figure img { max-height: 13.5rem; }

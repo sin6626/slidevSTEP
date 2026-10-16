@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-16",
+  "cwd": "/Users/sin/Documents/Project/PlateCompany/plate",
+  "head": "0020ca84b05339219b769fd2e2a24dbb96038144",
+  "servingURL": "http://localhost:3301",
+  "launch": "PLATE_WWW_PLITE=1 PLATE_WWW_DEV_SOURCE=1 pnpm exec next dev --port 3301",
+  "sourceHashes": {
+    "apps/www/tests/browser/selection-edge-scroll.spec.ts": "a75960adf408e7c38f3a4451be66986433c3df9b7f2a9cb2fce16da0e2b55800",
+    "apps/www/playwright.config.ts": "a7be60e18be785522558a1836e44de5eb384f0d954a256f021e8d37d013c8ed2",
+    "packages/platejs/src/react/components/NodeSelection.tsx": "fc8240d3fe16b115669623f4f844a8031396d0a2b61ec72d523b949c7ec449ff",
+    "apps/www/next.config.ts": "5c514b9dbe3d0e0153fba238e87aaef6a2c136db2ff892a2ac439be3bfd95827"
+  },
+  "status": " M apps/www/public/r/api-dom-docs.json\n M apps/www/public/r/registry-docs.json\n M apps/www/public/r/registry.json\n M apps/www/src/__registry__/generation.json\n M apps/www/src/__registry__/index.tsx\n M apps/www/src/__registry__/overlays/manifest.json\n M apps/www/src/__registry__/registry-metadata.json\n?? docs/plans/2026-10-13-block-selection-table.decisions.tsv\n?? docs/plans/2026-10-13-block-selection-table.md\n?? docs/plans/2026-10-14-block-selection-media-release.decisions.tsv\n?? docs/plans/2026-10-14-block-selection-media-release.md\n?? docs/plans/2026-10-14-block-selection-regression.decisions.tsv\n?? docs/plans/2026-10-14-block-selection-regression.md\n?? docs/plans/2026-10-14-block-selection-resize.decisions.tsv\n?? docs/plans/2026-10-14-block-selection-resize.md\n?? docs/plans/2026-10-15-selection-scroll-pr.md\n",
+  "scope": "Only native-audio-release browser case, current source checkout; not a full regression or historical before/after.",
+  "case": "block marquee ends when released over native audio controls",
+  "command": "PLAYWRIGHT_BASE_URL=http://localhost:3301 pnpm exec playwright test --config playwright.config.ts --project=chromium selection-edge-scroll.spec.ts --grep \"block marquee ends when released over native audio controls\" --repeat-each=5 --retries=0 --workers=1 --output /tmp/step-course-evidence-20261016/browser-results",
+  "result": {
+    "distinctCases": 1,
+    "executions": 5,
+    "passed": 5,
+    "failed": 0,
+    "retries": 0,
+    "exitCode": 0
+  },
+  "readyEndpoint": {
+    "devSource": true,
+    "plite": true
+  },
+  "sourceHashMatchesAfterRun": true,
+  "imageInspected": "audio-after-release.png from chromium-repeat4; no drag rectangle, selected audio remains",
+  "historicalBeforeAfter": false
+}
