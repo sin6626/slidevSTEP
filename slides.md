@@ -31,7 +31,7 @@ defaults:
 <div class="cover-words">software testing / STEP</div>
 <h1 class="cover-title course-cover">STEP 模型<br>核心理念、测试过程与 Plate 实践</h1>
 <div class="cover-subtitle">三个阶段、八项活动，测试怎样贯穿开发</div>
-<p class="cover-meta">sin6626 · 软件测试课程报告</p>
+<p class="cover-meta"><PresenterName /> · 软件测试课程报告</p>
 </div>
 
 <!--

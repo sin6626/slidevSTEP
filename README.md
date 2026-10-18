@@ -13,6 +13,14 @@ pnpm dev
 
 内容位于 [slides.md](./slides.md)，样式位于 [style.css](./style.css)。STEP 总流程图使用可编辑的 Mermaid 代码，包含阶段连接与评估反馈。`pnpm build` 构建静态站点，`pnpm export` 使用 Slidev 的 PDF 导出功能，`pnpm check` 核对页数、备注、七项基本前提及出处、流程图与八项活动、证据引用及文件指纹。
 
+封面署名默认为 `sin6626`。部署时可通过构建环境变量设置显示名称：
+
+```sh
+VITE_PRESENTER_NAME='演讲者姓名' pnpm build
+```
+
+本地预览也可在项目根目录的 `.env.local` 中设置 `VITE_PRESENTER_NAME=演讲者姓名`，然后重新运行 `pnpm dev`。`.env.local` 已由 Git 忽略，不要将真实姓名写入受版本控制的文件。变量未设置或为空时仍显示 `sin6626`。署名会写入构建产物，修改后需重新构建并部署。
+
 Plate 案例依据 2026-10-16 整理的固定资料快照。分工提案、待准备环境和未执行试验均保留状态说明，不作为已完成的正式测试结果，也不声称团队正式采用了完整 STEP。资料主要说明重构期间的测试组织与改进，不能据此证明原始需求和设计阶段已经完整开展预防性测试。来源与核验范围见 [docs/EVIDENCE.md](./docs/EVIDENCE.md)。
 
 当前幻灯片引用的资料副本位于 `public/evidence/`，原路径与 SHA-256 见 `manifest.json`。此前单缺陷案例的证据继续留作归档，不用于当前课程页的整体通过结论。原 12 页版录屏不包含这次扩展的内容。
