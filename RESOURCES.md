@@ -21,6 +21,15 @@
 - 原书第 20 至 21 页及表 1-5：预防与风险管理、活动时机、相对清单的覆盖、过程可见性，PDF 第 51 至 52 页。比较对象是书中当时的行业实践，不外推今日行业现状。
 - ISTQB 2012 第 62 至 63 页 §5.7：内容参考模型、生命周期和七项基本前提，以及与 TPI Next 结合的说明。不是当前考试要求，也不与原书的活动表混作同一清单。
 
+## Plate 案例的原始资料
+
+- [Plate PR #5175：页面健康检查与人工测试指南](https://github.com/udecode/plate/pull/5175)
+  2026-10-18 使用本机 GitHub CLI 核对 PR 描述、实际 diff 与合并状态。2026-10-16 合入 `next`，固定 head 为 `93bc5098cb2116a5ebade694f3706b1e9139499d`。第 13 至 17 页按此版本讲述，合并不等于首轮人工测试或方法试验已完成。
+- [该版本的测试总计划](https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md)
+  Decisions 和 Skill trials 说明评估预写检查清单后转向计时现场探索；Round 1's planted-bug trial 是候选六动作与自由探索的待执行比较。步骤 1.1–1.5 交付工具与规则；1.6–1.11 以及 2.1 的浏览器回归 CI 门禁仍是后续工作。计划内历史构建记录有各自限制，不等于所有检查全绿。
+- [该版本的 Tester pass 指南](https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md)
+  页面范围与对照、计时录屏探索、浏览器轮换、问题记录、已知缺陷复查及下一轮规则。发现未知问题、复查已知问题和自动化回归保护各有作用；满足测试层级和浏览器 CI 条件后才减少对应人工复查。
+
 ## Wisdom
 
 - 本课程老师及课堂讨论。用于确认老师对 STEP 的中文术语、报告深度和案例要求。
