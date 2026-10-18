@@ -107,7 +107,7 @@ glow: bottom
 glowOpacity: 0.3
 glowHue: 87
 glowSeed: 411
-clicks: 1
+clicks: 2
 ---
 
 # STEP 的核心理念
@@ -128,13 +128,26 @@ clicks: 1
 </ol>
 </div>
 
-<div class="source"><a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=63" target="_blank">ISTQB CTAL-TM 2012 · §5.7 · p.63 · basic premises</a><br>七项基本前提，按该大纲原顺序译述。</div>
+<div v-click="2" style="margin-top: .7rem">
+<p class="small accent">本报告的理解性概括 · 四点对应关系</p>
+<div class="small" style="display: grid; grid-template-columns: 1fr 1fr; gap: .4rem 1.3rem">
+<div>① 以需求为测试依据 <span class="muted">（第 1、3 项）</span></div>
+<div>② 尽早介入、预防缺陷 <span class="muted">（第 2、4、5 项）</span></div>
+<div>③ 开发与测试协作 <span class="muted">（第 7 项）</span></div>
+<div>④ 分析缺陷，持续改进 <span class="muted">（第 6 项＋M2/M3）</span></div>
+</div>
+</div>
+
+<div class="source">七项译述：<a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=63" target="_blank">ISTQB CTAL-TM 2012 · §5.7 · p.63 · basic premises</a><br>“持续改进”另据 M2/M3：<a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">Craig &amp; Jaskiel · 原书 p.14 · Table 1-3</a>。四点是本报告概括，非原文固定分组。</div>
 
 <!--
 这里采用 ISTQB 二〇一二年测试经理大纲第五点七节的七项基本前提，顺序与该节原文一致。它是历史大纲对 STEP 的介绍。
 第一项强调测试策略以需求为依据。第二项说明测试从生命周期开始时介入。第三项说明测试可以作为需求和使用方式的模型，通过具体场景表达期望的软件行为。
 第四项强调先设计测试工作产物，用它们引导软件设计。在需求规格能够作为输入时，提前设计的测试可以暴露歧义和遗漏。
 第五项说明测试关注更早发现和预防缺陷。第六项要求系统地分析缺陷。第七项强调测试人员与开发人员协作。
+下方四点是本报告为理解而作的概括，不是原文规定的四大理念。第一点“以需求为测试依据”对应第一项与第三项：从需求出发，并通过测试描述需求和使用场景。
+第二点“尽早介入、预防缺陷”对应第二、第四、第五项：从生命周期开始设计测试，用测试工作产物引导设计，更早发现或预防缺陷。第三点“开发与测试协作”直接对应第七项。
+第四点“分析缺陷，持续改进”结合了两个来源。第六项直接支持的是系统分析缺陷，不能只凭这一条就推出完整的持续改进。“持续改进”还需要结合原书表一杠三：M2 检查测试集充分性，M3 评价软件与测试过程，才能解释发现不足、反馈并调整的思路。M2/M3 的活动名称是原文，持续改进是本报告对其用途的理解。
 -->
 
 ---
@@ -216,7 +229,7 @@ clicks: 2
 
 # 获取测试工作产物 · 目标、设计与实现
 
-<p class="lede">Acquire the Testware · testware 包括测试文档、用例、数据、程序等。</p>
+<p class="lede">Acquire the Testware · 包括测试文档、用例、数据、程序等。</p>
 
 <div class="steps course-steps activity-steps">
 <div>
