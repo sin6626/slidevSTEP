@@ -111,3 +111,5 @@ figcaption { font-size: .72rem; color: #ffffff69; margin-top: .45rem; line-heigh
 .lifecycle-table th { color: #ffffff69; font-size: .76rem; font-weight: 400; }
 .lifecycle-table th:first-child { width: 6rem; }
 .lifecycle-table th:nth-child(2) { width: 12.5rem; }
+
+.step-flow-slide .mermaid { margin: 1.8rem auto 0; text-align: center; }
