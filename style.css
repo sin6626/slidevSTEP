@@ -113,3 +113,11 @@ figcaption { font-size: .72rem; color: #ffffff69; margin-top: .45rem; line-heigh
 .lifecycle-table th:nth-child(2) { width: 12.5rem; }
 
 .step-flow-slide .mermaid { margin: 1.8rem auto 0; text-align: center; }
+
+.step-premises { gap: 2.3rem; margin-top: 1.6rem; }
+.step-premises ol { padding-left: 1.65rem; margin: 0; }
+.step-premises li { padding-left: .25rem; margin-bottom: 1.1rem; font-size: 1.12rem; line-height: 1.55; }
+.step-strengths th:first-child { width: 10rem; }
+.step-timing { margin-top: .9rem; }
+.timing-inputs { display: flex; justify-content: space-between; padding: 0 10% .45rem; font-size: .8rem; color: #ffffff8f; }
+.timing-row { border: 1px solid #92b09a70; background: #202923a8; padding: .12rem .7rem; margin-bottom: .18rem; font-size: .83rem; line-height: 1.35; }

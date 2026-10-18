@@ -66,7 +66,7 @@ clicks: 2
 </div>
 
 <div v-click="2" class="claim">预期结果写不出来，就先把需求问清楚。</div>
-<div class="source">预防性测试思想 · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=34" target="_blank">Systematic Software Testing · pp.4–5</a> · 退课情境为教学示例</div>
+<div class="source">预防性测试思想 · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=35" target="_blank">Systematic Software Testing · pp.4–5</a> · 退课情境为教学示例</div>
 
 <!--
 假设需求说学生可以在十八点以前退课。先试着列出十七点五十九分、十八点整和十八点零一分的用例。十八点整到底能不能退？如果规则没说清楚，就不能擅自编一个预期。
@@ -93,12 +93,12 @@ clicks: 1
 <p>同时评价软件表现与测试过程，为后续改进提供依据。</p>
 </div>
 
-<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=50" target="_blank">Systematic Software Testing · p.20</a> · <a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62" target="_blank">ISTQB CTAL-TM 2012 · §5.7</a></div>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=51" target="_blank">Systematic Software Testing · p.20</a> · <a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62" target="_blank">ISTQB CTAL-TM 2012 · §5.7</a></div>
 
 <!--
-STEP 的全称是 Systematic Test and Evaluation Process，可以理解为系统化测试与评价过程。它以预防性测试为导向，组织测试规划、测试资源准备、执行和评价。
+STEP 的全称是 Systematic Test and Evaluation Process，可以理解为系统化测试与评价过程。它以预防性测试为导向，组织策略制定、测试工作产物的获取，以及行为度量。
 ISTQB 二〇一二年高级测试管理大纲把 STEP 作为内容参考模型介绍。这里强调测试过程需要包含哪些活动，不把它说成给组织评成熟度等级的模型。
-STEP 也不等于 TDD。TDD 是先写失败测试、实现通过、再重构的开发循环。STEP 讨论整体测试如何组织，提前设计需求用例并不自动等于 TDD，两者可以配合。
+STEP 也不等于 TDD。TDD 是先写失败测试、实现通过、再重构的开发循环。STEP 讨论整体测试如何组织，提前设计需求用例并不自动等于 TDD。TDD 的独立定义依据 Martin Fowler，https://martinfowler.com/bliki/TestDrivenDevelopment.html 。
 参考原书第二十页和历史大纲第五点七节。原书说明测试规划从需求阶段开始，测试设计与软件设计并行。
 -->
 
@@ -107,36 +107,34 @@ glow: bottom
 glowOpacity: 0.3
 glowHue: 87
 glowSeed: 411
-clicks: 2
+clicks: 1
 ---
 
 # STEP 的核心理念
 
-<p class="lede">以下是依据原始资料整理的课堂概括。</p>
+<p class="lede">基本前提 · 按 ISTQB 2012 大纲 §5.7 的原文顺序逐项译述。</p>
 
-<div class="pair">
-<div>
-<h2>以需求为测试依据</h2>
-<p>从需求确定目标和预期，发现歧义就反馈。</p>
-<h2 class="mt-7">从生命周期早期开始</h2>
-<p>需求出现时就能规划和设计测试。</p>
-</div>
-<div v-click="1">
-<h2>开发与测试协作</h2>
-<p>开发逐步提供信息，测试及时提出问题。</p>
-<h2 class="mt-7">分析结果，持续改进</h2>
-<p>既评价软件，也检查测试是否充分有效。</p>
-</div>
+<div class="pair step-premises">
+<ol>
+<li>基于需求的测试策略。</li>
+<li>测试从生命周期开始时介入。</li>
+<li>测试用作需求和使用模型。</li>
+<li>测试工作产物的设计引导软件设计。</li>
+</ol>
+<ol v-click="1" start="5">
+<li>更早发现缺陷，或预防缺陷产生。</li>
+<li>系统地分析缺陷。</li>
+<li>测试人员与开发人员协作。</li>
+</ol>
 </div>
 
-<p v-click="2" class="claim">测试设计本身，就能帮助发现开发产物中的问题。</p>
-<div class="source">课堂概括，非官方条目穷举 · <a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62" target="_blank">ISTQB CTAL-TM 2012 · §5.7</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=50" target="_blank">原书 p.20</a></div>
+<div class="source"><a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=63" target="_blank">ISTQB CTAL-TM 2012 · §5.7 · p.63 · basic premises</a><br>七项基本前提，按该大纲原顺序译述。</div>
 
 <!--
-这四点是为了课堂讲解整理的概括，不是原书给出的全部原则清单。
-以需求为依据，意味着预期结果要有来源。需求不清楚时，先澄清，而不是把测试者的猜测当成正确答案。
-从生命周期早期开始，是说可以提前规划和设计，不意味着还没有可运行软件时就能执行真实界面测试。开发和测试协作，让这些设计发现的问题能够及时反馈。
-最后还要分析测试结果，评价软件与测试过程。测试没有发现问题，可能是软件表现正常，也可能是测试目标和方法有遗漏，需要分别判断。
+这里采用 ISTQB 二〇一二年测试经理大纲第五点七节的七项基本前提，顺序与该节原文一致。它是历史大纲对 STEP 的介绍。
+第一项强调测试策略以需求为依据。第二项说明测试从生命周期开始时介入。第三项说明测试可以作为需求和使用方式的模型，通过具体场景表达期望的软件行为。
+第四项强调先设计测试工作产物，用它们引导软件设计。在需求规格能够作为输入时，提前设计的测试可以暴露歧义和遗漏。
+第五项说明测试关注更早发现和预防缺陷。第六项要求系统地分析缺陷。第七项强调测试人员与开发人员协作。
 -->
 
 ---
@@ -150,25 +148,25 @@ clicks: 0
 
 # STEP 整体流程
 
-<p class="lede">三个阶段、八项活动，评价结果反馈到计划和测试资源。</p>
+<p class="lede">三个阶段、八项活动 · 活动结构不等于严格的执行时间线。</p>
 
 ```mermaid
-%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 250}, 'themeVariables': {'background': 'transparent', 'fontFamily': 'Nunito Variable, ChillRoundM, sans-serif', 'fontSize': '17px', 'primaryColor': '#202923', 'primaryTextColor': '#f0f4f0', 'primaryBorderColor': '#92b09a', 'lineColor': '#acb7b0', 'edgeLabelBackground': '#1c211e'}}}%%
+%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 250}, 'themeVariables': {'background': 'transparent', 'fontFamily': 'Nunito Variable, ChillRoundM, sans-serif', 'fontSize': '16px', 'primaryColor': '#202923', 'primaryTextColor': '#f0f4f0', 'primaryBorderColor': '#92b09a', 'lineColor': '#acb7b0', 'edgeLabelBackground': '#1c211e'}}}%%
 flowchart LR
-  P["Planning<br/>测试规划<br/>P1 总体测试计划<br/>P2 详细测试计划"] --> A["Acquisition<br/>准备测试资产<br/>A1 列出测试目标<br/>A2 设计测试<br/>A3 实现测试计划与设计"]
-  A --> M["Measurement<br/>执行与评价<br/>M1 执行测试<br/>M2 检查测试集充分性<br/>M3 评价软件与测试过程"]
+  P["Plan the Strategy<br/>制定策略<br/>P1 总体测试计划<br/>P2 详细测试计划"] --> A["Acquire the Testware<br/>获取测试工作产物<br/>A1 列出测试目标<br/>A2 设计测试<br/>A3 实现测试计划与设计"]
+  A --> M["Measure the Behavior<br/>度量行为<br/>M1 执行测试<br/>M2 检查测试集充分性<br/>M3 评价软件与测试过程"]
   M -. 反馈 .-> P
   M -. 反馈 .-> A
 ```
 
-<p class="claim">活动可重叠、可反复，不是开发结束后的单次流水线。</p>
-<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">Systematic Software Testing · p.14 · Table 1-3</a> · 反馈线为课堂概括</div>
+<p class="claim">同一层级内、不同层级间，活动都可能交叠。</p>
+<div class="source">据 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">原书 p.14 · Table 1-3</a> 重绘活动结构；虚线反馈为说明性补充，非原表箭头。<br>活动交叠与时序依据 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=46" target="_blank">pp.15–16 · Figures 1-5 / 1-6</a>。</div>
 
 <!--
-这是本报告的整体流程图。实线从 Planning 到 Acquisition，再到 Measurement，分别组织规划、资源准备、执行与评价。每个节点里列出了原书表一杠三的活动，总共八项。
-P1 制定总体计划，P2 制定详细计划。A1 列出测试目标，A2 设计测试，A3 实现计划与设计。M1 执行测试，M2 检查测试集充分性，M3 评价软件与测试过程。
-虚线表示评价后的反馈。发现目标和用例遗漏，可以回到 A。发现范围、策略、人员和时间安排有问题，可以回到 P。这些箭头是课堂概括，不是原书图的逐像素复刻。
-实际活动可以重叠，不同模块与测试层级也可以分别进行。接下来逐个看三个阶段解决什么问题。
+原书表一杠三把 STEP 分为三个阶段。制定策略包括总体测试计划与详细测试计划。获取测试工作产物包括列出目标、设计测试、实现计划与设计。度量行为包括执行、检查测试集充分性、评价软件与测试过程。
+本页把表格中的活动改画成流程图，方便看清结构。实线说明阶段关系，不表示每个阶段必须全部结束，下一阶段才能开始。
+虚线是为说明反馈关系添加的。例如评价后发现目标和设计不足，需要补充工作产物；安排有问题，需要修订计划。虚线不是原书图中已有的箭头。
+原书第十五至十六页另外说明执行时机和活动交叠，第九页将单独展示这些时序特点。
 -->
 
 ---
@@ -179,32 +177,33 @@ glowSeed: 612
 clicks: 1
 ---
 
-# Planning · 总体计划与详细计划
+# 制定策略 · 总体计划与详细计划
 
-<p class="lede">先决定测什么、为什么测，再安排怎样组织这一轮测试。</p>
+<p class="lede">Plan the Strategy · 选择策略，确定测试层级和开展方式。</p>
 
 <div class="pair">
 <div>
 <h2><span class="accent">P1</span> 制定总体测试计划</h2>
-<p>范围是什么？哪些风险优先？</p>
-<p>统筹策略、测试层级、资源与职责。</p>
-<p class="small muted mt-5">产物 · 总体测试计划</p>
+<p>确定总体范围、风险与测试策略。</p>
+<p>统筹测试层级、资源和职责。</p>
+<p class="small muted mt-5">Master test plan</p>
 </div>
 <div v-click="1">
 <h2><span class="accent">P2</span> 制定详细测试计划</h2>
-<p>由谁、何时、在哪种环境开展？</p>
-<p>细化各测试层级的安排与进入、结束条件。</p>
-<p class="small muted mt-5">产物 · 相应层级的详细测试计划</p>
+<p>细化对应层级的执行安排。</p>
+<p>明确人员、环境、时间及开始和结束条件。</p>
+<p class="small muted mt-5">Detailed test plans</p>
 </div>
 </div>
 
-<p class="claim">具体输入、操作与预期结果，留到 A2 设计测试。</p>
-<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">P1 / P2 · Systematic Software Testing · p.14</a> · 问题与产物为课堂译述</div>
+<p class="claim">详细计划组织测试，A2 再设计具体测试。</p>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">原书 p.14 · Table 1-3</a>；层级与裁剪见 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">p.13 · Figure 1-4</a>。中文问题说明为译述。</div>
 
 <!--
-P1 从整个项目考虑范围和风险，决定总体策略、测试层级、资源和职责。它形成总体测试计划，为后续工作提供方向。
-P2 把安排细化到对应测试层级。例如谁来执行系统测试，环境怎样准备，什么条件可以开始，达到什么条件可以结束。单元、集成、系统和验收测试可以有各自的详细安排。
-详细计划不等于详细用例。计划回答怎样组织测试，某一条用例具体输入什么、怎样操作、预期是什么，属于后面的测试设计。实际项目可以精简文档形式，但这些决策仍要有人负责。
+Plan the Strategy 是原书的阶段名称，可以译为制定策略。原书第十四页说明，这一阶段选择策略，明确测试层级和方式。
+P1 建立总体测试计划，统筹项目测试。P2 制定详细测试计划，把安排落实到对应测试层级。原书第十三页说明简单项目可能只需要一两个测试层级，复杂项目则可以有更多层级，具体按项目裁剪。
+总体计划和详细计划的活动名称来自表一杠三，页面上的范围、风险、人员和环境等是对计划问题的解释，不是额外的 STEP 活动。
+详细计划不等于详细用例。具体输入、操作与预期结果属于后面的测试设计。
 -->
 
 ---
@@ -215,40 +214,38 @@ glowSeed: 713
 clicks: 2
 ---
 
-# Acquisition · 把目标变成可执行资源
+# 获取测试工作产物 · 目标、设计与实现
 
-<p class="lede">通用需求示例 · 先确认退课规则，再设计和准备测试。</p>
+<p class="lede">Acquire the Testware · testware 包括测试文档、用例、数据、程序等。</p>
 
 <div class="steps course-steps activity-steps">
 <div>
 <div class="step-no">A1</div>
 <h2>列出测试目标</h2>
-<div class="english">要检查什么？</div>
-<p>截止时间的处理，<br>成功退课后的名额变化。</p>
-<p class="small muted">产物 · 测试目标清单</p>
+<div class="english">需求、设计与实现为依据</div>
+<p>识别并整理要测试的内容，<br>形成测试目标清单。</p>
 </div>
 <div v-click="1">
 <div class="step-no">A2</div>
 <h2>设计测试</h2>
-<div class="english">怎样检查，依据是什么？</div>
-<p>设计边界输入与状态检查，<br>预期以确认后的规则为准。</p>
-<p class="small muted">产物 · 条件、步骤与预期</p>
+<div class="english">架构与环境，以及具体测试</div>
+<p>设计测试架构与环境，<br>按需求、设计、实现设计测试。</p>
 </div>
 <div v-click="2">
 <div class="step-no">A3</div>
 <h2>实现计划与设计</h2>
-<div class="english">把执行条件准备好</div>
-<p>准备账号、课程和时间环境，<br>实现脚本或人工操作说明。</p>
-<p class="small muted">产物 · 可使用的测试资源</p>
+<div class="english">形成能够执行的测试工作产物</div>
+<p>实现测试步骤和程序，<br>准备配套数据、文件与环境。</p>
 </div>
 </div>
 
-<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">A1 / A2 / A3 · 原书 p.14</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=47" target="_blank">testware · p.17</a> · 退课为教学示例</div>
+<p class="small muted mt-5">假设退课示例 · 先列截止时间目标，再设计边界检查，最后准备课程数据与执行步骤；规则仍需确认。</p>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">原书 p.14 · Table 1-3</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=48" target="_blank">pp.17–19 · Work Products of STEP</a></div>
 
 <!--
-Acquisition 在原书中叫 Acquire Testware。testware 指测试活动形成的文档和产品，例如计划、用例、数据和脚本，所以资源准备不只是安装工具。
-A1 列出目标，本例包括截止时间的处理和退课后名额的变化。A2 再为目标设计输入、步骤和预期。例如检查截止前、截止点和截止后的申请，并检查成功退课后的课程状态。规则没有确认，就先澄清，不能编预期。
-A3 把这些设计落实成可用的资源。准备测试账号、课程数据和可控的时间环境，实现自动脚本，或写清人工执行说明和记录方式。这些都是教学中的准备建议，不表示已经有真实退课系统或已经执行。
+Acquire the Testware 可以译为获取测试工作产物。原书第十七页把 testware 定义为测试计划、测试规格、已实现的测试过程、测试用例和测试数据文件等测试产品。获取也包含分析、设计和实现这些产物，不能仅理解为安装工具。
+A1 根据需求、设计和实现列出测试目标。A2 不只设计单条用例，还包括测试架构与环境，以及基于需求、设计和实现的测试设计。A3 将这些计划与设计落实为测试步骤、配套数据、文件、环境和必要的支持代码。
+以假设退课系统为例，截止时间是一个目标；检查截止前、截止点和截止后是设计；准备课程数据、时间条件和可执行步骤是实现。设计和实现信息出现后，还可以补充接口、状态或代码层面的目标与测试。示例没有真实业务规格，预期结果要以确认后的规则为准。
 -->
 
 ---
@@ -259,38 +256,39 @@ glowSeed: 814
 clicks: 2
 ---
 
-# Measurement · 执行、查充分性、作评价
+# 度量行为 · 执行、充分性与评价
 
-<p class="lede">用例通过以后，还要判断覆盖了什么、遗漏了什么。</p>
+<p class="lede">Measure the Behavior · 执行结果与测试覆盖需要分别检查。</p>
 
 <div class="steps course-steps activity-steps">
 <div>
 <div class="step-no">M1</div>
 <h2>执行测试</h2>
 <div class="english">实际表现符合预期吗？</div>
-<p>执行操作、对照预期，<br>记录结果与异常。</p>
+<p>执行测试、检查结果，<br>留下记录与问题报告。</p>
 </div>
 <div v-click="1">
 <div class="step-no">M2</div>
 <h2>检查测试集充分性</h2>
-<div class="english">测试目标覆盖得够吗？</div>
-<p>对照目标与覆盖准则，<br>结合风险检查遗漏。</p>
+<div class="english">测试与目标清单怎样对应？</div>
+<p>检查需求、设计等清单<br>与测试的覆盖对应，识别遗漏。</p>
 </div>
 <div v-click="2">
 <div class="step-no">M3</div>
 <h2>评价软件与测试过程</h2>
-<div class="english">产品与测试分别怎样？</div>
-<p>软件还有哪些质量风险？<br>测试方法与安排怎样改进？</p>
+<div class="english">软件与测试过程分别怎样？</div>
+<p>评价软件表现，<br>也评价测试过程与工作产物。</p>
 </div>
 </div>
 
-<p class="claim">已通过的用例，只能支持它们所检查的行为。</p>
-<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">M1 / M2 / M3 · Systematic Software Testing · p.14</a></div>
+<p class="claim">“覆盖已知”是相对于所列清单，不是所有缺陷都已覆盖。</p>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">原书 p.14 · Table 1-3</a> · 覆盖清单与校准见 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=51" target="_blank">pp.20–21</a></div>
 
 <!--
-M1 是执行测试并记录结果。M2 要检查现有测试集是否充分，例如每个需求目标有没有对应测试，高风险边界有没有遗漏，覆盖准则是否满足。不能只看用例通过率。
-M3 有两个评价对象。评价软件，要根据证据判断已发现的问题和剩余质量风险。评价测试过程，要看目标、方法、资源和安排是否有效。
-如果发现遗漏，就补充设计再执行。如果方法或资源有问题，就调整 A 阶段。如果范围、策略或时间不合适，就调整 P 阶段。没有发现缺陷不能直接推出没有缺陷。
+M1 执行测试，检查实际结果并记录问题。M2 检查测试集是否充分。原书第二十至二十一页强调，应把测试与需求、设计、代码等目标清单建立对应，并相对这些清单度量覆盖。
+因此用例全部通过与测试充分是不同的问题。目标清单本身遗漏了需求，即使用例覆盖了清单中的每一项，也不能推出遗漏的行为得到验证。
+M3 同时评价软件和测试过程。软件目前表现怎样，测试设计、执行和记录又是否有效，需要分别作出有证据支持的评价。
+原书表一杠三给出八项活动的名称；这里对充分性检查的解释同时依据第二十至二十一页的覆盖对应关系，不能把方法试验或用例通过率直接当成完整覆盖。
 -->
 
 ---
@@ -303,26 +301,28 @@ clicks: 2
 
 # 测试怎样贯穿软件开发？
 
-<p class="lede">开发产物逐渐明确，测试活动也随之展开。</p>
+<p class="lede">同一测试层级内，活动依次展开并可交叠；图中长度不代表工期。</p>
 
-<table class="lifecycle-table">
-<thead><tr><th>开发进程</th><th>开发在做什么</th><th>测试可以做什么</th></tr></thead>
-<tbody>
-<tr><td>需求形成</td><td>明确功能与业务规则</td><td>规划测试，列出目标，提前设计需求用例</td></tr>
-<tr v-click="1"><td>软件设计</td><td>确定结构、接口与交互</td><td>补充设计相关测试，反馈遗漏与歧义</td></tr>
-<tr v-click="1"><td>编码实现</td><td>实现和集成模块</td><td>补充代码相关测试，准备脚本、数据和环境<br>有可运行模块，就能开展相应的 <span class="accent">M1</span></td></tr>
-<tr v-click="2"><td>版本可运行</td><td>交付版本，处理发现</td><td>继续执行，检查充分性，评价软件与测试过程</td></tr>
-</tbody>
-</table>
+<div class="step-timing" role="img" aria-label="依据原书图1-6重绘，制定计划、分析目标、设计测试、实现测试、执行、检查充分性和评价依次展开，活动可以交叠。">
+<div class="timing-inputs"><span>需求规格</span><span>设计描述</span><span>软件实现</span></div>
+<div class="timing-row" style="margin-left: 0%">制定计划</div>
+<div class="timing-row" style="margin-left: 6%">分析测试目标</div>
+<div class="timing-row" style="margin-left: 12%">设计测试</div>
+<div class="timing-row" style="margin-left: 18%">实现测试计划与设计</div>
+<div v-click="1" class="timing-row" style="margin-left: 24%">执行测试</div>
+<div v-click="1" class="timing-row" style="margin-left: 30%">检查测试集充分性</div>
+<div v-click="1" class="timing-row" style="margin-left: 36%">评价软件与测试过程</div>
+</div>
 
-<p class="claim">活动可以重叠；需求变化时，计划和测试资源也要更新。</p>
-<div class="source">课堂概括，非开发阶段与测试活动的一一对应 · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=45" target="_blank">Systematic Software Testing · pp.15–17、20</a></div>
+<p v-click="2" class="claim">高层测试可以先设计、后执行；各层级的测试设计也可交叠。</p>
+<div class="source">据 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=47" target="_blank">原书 p.16 · Figure 1-6</a> 重绘；高层测试时序见 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=46" target="_blank">pp.15–16 · Figure 1-5</a>。<br>生命周期从需求形成延续到退役，见 <a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62" target="_blank">ISTQB §5.7 · p.62</a>。</div>
 
 <!--
-这张表按开发进程帮助理解，但不能把某一项测试活动固定在某一行。需求形成时，就可以规划并设计基于需求的测试，发现歧义后及时反馈。
-软件设计时补充与结构、接口和交互有关的测试。编码时继续补充实现相关测试，并准备数据、环境与脚本。有可运行模块时，就能执行相应的 M1，不必等整个版本都结束开发。
-版本可运行以后，仍要执行、检查充分性并评价。不同模块、迭代和测试层级可以重叠开展。P、A、M 都可能随着新信息和反馈反复进行。
-提前设计真实界面的用例，与已经能够运行真实界面测试，是不同的事情。原书第十五至十七页说明活动时间与测试工作产物，第二十页强调测试规划从需求阶段开始，并行开展测试设计。历史 ISTQB 大纲还说明这种方法贯穿需求形成直到系统退役，发布后发生变更仍要持续测试并更新测试资产。
+这幅可编辑时序图依据原书第十六页图一杠六重绘，保留活动依次展开、持续交叠的关系。条形长度不表示实际日期、投入或工期，开发输入也不是每项测试只能开始一次的硬性关卡。
+计划和目标先展开，再设计测试和实现测试，随后执行、检查充分性并评价。活动可以交叠，不能理解成上一项全部结束后才能开展下一项。
+原书第十五页强调，在被测组件的外部、功能或黑盒规格可用时，就能开始基于需求的测试设计，并争取在相应软件详细设计之前完成大部分测试设计。高层级的系统、验收测试以系统需求为输入，可以提前设计。随着设计细化，再补设计相关测试；编码时，再补实现相关测试。
+原书第十六页也区分设计顺序与执行顺序。单元、集成、系统和验收测试的执行受到被测软件组装顺序的限制；规划和获取测试工作产物没有同样限制，高层测试集可以先开发、后使用。不同层级的目标分析与设计可以交叠。
+历史 ISTQB 大纲第五点七节把生命周期范围写到系统退役。因此发布后仍需随变更维护相应测试，不能把测试贯穿开发理解为发布即结束。
 -->
 
 ---
@@ -333,38 +333,30 @@ glowSeed: 1016
 clicks: 2
 ---
 
-# STEP 的优点
+# STEP 的特点与优势
 
-<p class="lede">从模型的活动安排，看它能怎样帮助测试工作。</p>
+<p class="lede">原书 Table 1-5 的比较维度 · 反映 2002 年出版时的论述。</p>
 
-<div class="steps course-steps activity-steps">
-<div>
-<div class="step-no">01</div>
-<h2>及早澄清问题</h2>
-<div class="english">设计测试也能发现遗漏</div>
-<p>需求尚在讨论时，<br>就检查规则与预期是否明确。</p>
-</div>
-<div v-click="1">
-<div class="step-no">02</div>
-<h2>产物与依据清楚</h2>
-<div class="english">目标、设计、执行可衔接</div>
-<p>说明为何检查、怎样检查，<br>以及结论依据什么。</p>
-</div>
-<div v-click="2">
-<div class="step-no">03</div>
-<h2>持续评价与改进</h2>
-<div class="english">同时关注软件与测试过程</div>
-<p>根据遗漏和执行结果，<br>调整计划与测试资源。</p>
-</div>
-</div>
+<table class="lifecycle-table step-strengths">
+<thead><tr><th>维度</th><th>原书列出的 STEP 特点</th></tr></thead>
+<tbody>
+<tr><td>目标</td><td>以预防缺陷与风险管理为导向。</td></tr>
+<tr><td>规划时机</td><td>从需求定义时开始测试规划。</td></tr>
+<tr><td>获取时机</td><td>从需求定义时开始获取测试工作产物。</td></tr>
+<tr v-click="1"><td>覆盖</td><td>建立测试与目标清单的对应，覆盖相对于清单是已知的。</td></tr>
+<tr v-click="2"><td>过程可见性</td><td>测试活动形成文档和工作产物，能够检查和评价。</td></tr>
+</tbody>
+</table>
 
-<p class="claim">这些安排支持发现和管理风险，不保证软件没有 Bug。</p>
-<div class="source">基于模型特点的课堂分析 · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">原书 pp.14–20</a></div>
+<p class="claim">提前反馈问题，并让测试结论有可检查的依据。</p>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=52" target="_blank">Craig &amp; Jaskiel · Systematic Software Testing (2002) · p.21 · Table 1-5</a><br>此处译述 STEP 一列；原书的行业比较不代表今天整个行业的状况。</div>
 
 <!--
-这些优点是根据模型特点作出的课堂分析，不是本报告测得的项目收益。
-提前设计测试，可以帮助需求讨论尽早发现歧义。目标、设计和记录相互衔接，也有助于说明测试结论的依据。M2 和 M3 则要求我们继续检查遗漏，评价软件和测试过程，避免执行完就结束。
-这些安排并不能保证没有 Bug。实际效果仍取决于目标是否合适、设计是否有效，以及执行和评价是否落实。
+这一页逐项对应原书表一杠五的五个比较维度，介绍 STEP 一列的内容。
+原书首先强调预防与风险管理，并主张从需求定义时开始规划和获取测试工作产物。提前进行测试设计，有机会在编码前发现需求和设计问题。
+随后是已知覆盖，但原文明确限定为相对于列出的目标清单。测试与清单建立对应，才可以说明已经覆盖哪些目标。清单本身仍需要检查。
+过程可见性来自各活动形成的工作产物，例如计划、清单、设计、测试集和报告；它们使过程可以被检查和评价。
+这是二〇〇二年出版原书中的比较，不能把书中对当时常见行业做法的描述当成今天所有团队的现状，也不把这些特点说成本项目已经测得的收益。
 -->
 
 ---
@@ -375,32 +367,32 @@ glowSeed: 1117
 clicks: 1
 ---
 
-# 局限性与实施条件
+# 实施条件与适用边界
 
-<p class="lede">以下是基于模型特点的分析。</p>
+<p class="lede">模型假定有可用的开发信息，并要求按具体项目裁剪。</p>
 
 <div class="pair">
 <div>
-<h2>需要持续维护测试资产</h2>
-<p>需求变化时，目标、用例、数据和脚本都要更新。</p>
-<h2 class="mt-7">需要协作与投入</h2>
-<p>规划、准备、执行和评价都需要人员与时间。</p>
+<h2>需要可用的开发信息</h2>
+<p>假定是开发性工作，而非探索性研究。</p>
+<p>需求与技术设计信息应当可理解、可用于测试。</p>
+<p class="small muted mt-5">尚未明确时，测试也能帮助分析与澄清。</p>
 </div>
 <div v-click="1">
-<h2>效果受设计质量影响</h2>
-<p>目标遗漏或预期错误，仍可能漏掉重要问题。</p>
-<h2 class="mt-7">需要具体技术与工具</h2>
-<p>模型组织活动，项目仍要选择方法并落实执行。</p>
+<h2>需要按项目裁剪</h2>
+<p>不绑定特定工具、组织或人员配置。</p>
+<p>测试层级、任务和产物应随项目调整。</p>
+<p class="small muted mt-5">测试工作产物随软件共同设计、构建和维护。</p>
 </div>
 </div>
 
-<div class="source">课堂分析，非原书的局限性原文清单 · 依据 <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">原书 pp.14–20</a></div>
+<div class="source"><a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=43" target="_blank">原书 p.12 · Elements of STEP</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">p.13 · STEP Architecture</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=48" target="_blank">p.17 · Work Products</a></div>
 
 <!--
-从实施条件看，STEP 需要维护测试工作产物。需求变化后，如果目标、预期或脚本仍是旧版本，系统化的形式也不能保证结论可靠。运行维护期间发生变更，也要持续更新测试资产。
-活动还需要投入。开发和测试要协作，安排执行与评价的时间，不能只有一份计划却没有人维护。
-测试效果也受目标与设计质量影响。错误的预期可能把缺陷当成正确行为，遗漏的目标可能根本没有被测试。STEP 提供活动组织方式，项目仍要选择合适的设计技术、工具和覆盖准则。
-这里不推出 STEP 不适合敏捷，也不要求冻结全部需求。活动可以随迭代和反馈更新，具体怎样落地要结合项目。
+讨论局限时，先看原书明确写出的使用前提。原书第十二页假定是开发性工作，而不是探索性研究；需求和技术设计信息需要可理解，能够作为测试输入。
+这不意味着必须先冻结全部需求。原书同页也说，即使需求和设计尚未明确，STEP 的许多部分仍可使用，而且可以帮助分析和描述需求与设计。实际缺少依据时，需要先澄清，不能凭空写预期。
+原书还说明模型不依赖工具，也不要求特定测试组织或人员配置。第十三页要求按具体测试情境裁剪、修订或扩展模型。第十七页说明软件与测试工作产物并行发展，相互支持。
+所以它不会替项目自动选好工具、测试层级和资源安排。这些条件说明，实际应用仍需澄清测试依据，并按项目安排合适的测试活动。
 -->
 
 ---
@@ -411,25 +403,31 @@ glowSeed: 1218
 clicks: 2
 ---
 
-# 怎样与其他模型、策略和技术配合？
+# STEP 可以与其他模型配合吗？
 
-<p class="lede">它们回答不同层次的问题，可以一起使用。</p>
+<p class="lede">ISTQB §5.7 明确提到 STEP 与 TPI Next 配合的实践。</p>
 
-<div class="matrix">
-<div class="matrix-row matrix-head"><p>层次与例子</p><p>主要回答什么</p><p>怎样配合 STEP</p></div>
-<div class="matrix-row"><p>过程视角 · V 模型</p><p>开发产物对应哪些测试层级？</p><p>帮助明确测试依据与层级</p></div>
-<div v-click="1" class="matrix-row"><p>策略 · 基于风险</p><p>先测什么，投入多少？</p><p>帮助 Planning 排优先级</p></div>
-<div v-click="1" class="matrix-row"><p>设计技术 · 边界值等</p><p>怎样选择输入与场景？</p><p>帮助 Acquisition 设计测试</p></div>
-<div v-click="2" class="matrix-row"><p>执行方式 · 探索与自动化</p><p>怎样开展和重复检查？</p><p>准备资源，支持执行与记录</p></div>
+<div class="pair">
+<div>
+<h2>STEP · 内容参考模型</h2>
+<p>说明测试过程有哪些活动，<br>以及各活动何时、怎样开展。</p>
+<p class="small muted mt-5">帮助具体描述和组织测试过程。</p>
+</div>
+<div v-click="1">
+<h2>TPI Next · 成熟度视角</h2>
+<p>使用关键领域、检查点与成熟度模型，<br>评估测试过程并确定改进方向。</p>
+<p class="small muted mt-5">帮助了解当前状态和改进重点。</p>
+</div>
 </div>
 
-<div class="source">课堂配合示意，非模型优劣排名 · <a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf" target="_blank">ISTQB CTAL-TM 2012 · 风险与测试过程</a> · <a href="https://api.pageplace.de/preview/DT0400.9781580537926_A25416955/preview-9781580537926_A25416955.pdf#page=44" target="_blank">STEP 活动依据</a></div>
+<p v-click="2" class="claim">评估与改进方向，可以结合具体活动设计一起使用。</p>
+<div class="source"><a href="https://istqb.org/wp-content/uploads/2024/11/CTAL_TM_2012_Syllabus_v2.0.pdf#page=62" target="_blank">ISTQB CTAL-TM 2012 · §5.5 TPI Next / §5.7 STEP · pp.62–63</a><br>§5.7 记录了 STEP 评估模型与 TPI Next 成熟度模型结合的实践。</div>
 
 <!--
-这里选几个熟悉的例子说明层次差异，不做所有测试理论的比较。V 模型强调开发产物与相应测试层级的关系，可以帮助明确测试依据。STEP 关注如何组织规划、资源准备、执行和评价。
-基于风险的策略帮助 Planning 决定先测什么、资源怎样分配。边界值分析等设计技术帮助 Acquisition 选择输入与场景，例如退课时间的边界。
-探索测试与自动化支持具体执行。探索测试中设计和执行可以交织进行，自动化还需要在资源准备时实现脚本，两者并不是 Measurement 的专属工具。
-还要区分内容参考模型和成熟度模型。STEP 说明过程内容，成熟度模型主要用于评价和改进过程能力。历史 ISTQB 大纲还提到 STEP 与 TPI Next 结合的实例，不能把两者混成同一种模型。
+可以结合使用，但应先说明模型各自回答什么问题。ISTQB 二〇一二年大纲把 STEP 作为内容参考模型，关注具体活动及其开展方式。
+同一份大纲第五点五节介绍 TPI Next，用关键领域、检查点和成熟度模型评估测试过程并组织改进。第五点七节明确记载，在某些情况下，STEP 评估模型会与 TPI Next 成熟度模型结合使用。
+因此可以一边识别过程当前处于什么状态、需要优先改进什么，一边用具体测试活动落实改进。大纲只是记述结合实践，并未给出所有项目必须遵循的标准组合方法。
+这页以这一个有直接出处的例子回答能否配合使用，不把内容参考模型与成熟度模型混为同一类别。
 -->
 
 ---
@@ -476,12 +474,12 @@ clicks: 2
 
 # Plate 的测试规划
 
-<p class="lede">对应 Planning · 把页面范围和测试策略落实到执行安排。</p>
+<p class="lede">对应制定策略 · 把页面范围和测试策略落实到执行安排。</p>
 
 <div class="pair">
 <div>
 <h2>总体范围与策略</h2>
-<p>列出页面与功能范围，按风险安排优先级。</p>
+<p>列出页面与功能范围，按团队既定顺序安排。</p>
 <p>共有功能对照 Slate 或正式版 Plate。</p>
 <p>新功能先确认预期，不能只凭版本差异判错。</p>
 </div>
@@ -497,7 +495,7 @@ clicks: 2
 <div class="source">2026-10-16 方案状态 · <a href="/evidence/plate-work-readme.md" target="_blank">行动指南 · 二、五、六</a> · <a href="/evidence/plate-source-status.md" target="_blank">使用边界</a></div>
 
 <!--
-对应 Planning，先看整体范围和策略。资料区分共有功能与新功能。共有功能有 Slate 或正式版 Plate 作为对照；新功能没有旧版对照时，需要依据明确需求和设计判断，差异本身不等于缺陷。
+对应制定策略，先看整体范围和策略。资料区分共有功能与新功能。共有功能有 Slate 或正式版 Plate 作为对照；新功能没有旧版对照时，需要依据明确需求和设计判断，差异本身不等于缺陷。
 再看详细安排。需要把页面和范围分给人员，安排浏览器、方法组、时间和已知问题复测，并确认测试地址和环境。
 二〇二六年十月十六日快照中的双人分工提案仍等待 Ziad 批准，浏览器、方法组和实际预览地址没有在个人清单中确定，不能说正式测试已经开始。
 Plate 资料中的 P1 到 P6 是测试与修复的优先顺序，和 STEP 的 P1 总体计划、P2 详细计划不是同一套编号。本页使用优先级文字，避免混淆。
@@ -513,7 +511,7 @@ clicks: 2
 
 # Plate 的测试资源准备
 
-<p class="lede">对应 Acquisition · 把测试目标和方法落实到可用资源。</p>
+<p class="lede">对应获取测试工作产物 · 把测试目标和方法落实到可用资源。</p>
 
 <div class="pair">
 <div>
@@ -525,7 +523,7 @@ clicks: 2
 <div v-click="1">
 <h2>正式执行前仍需确认</h2>
 <p>获批分工、轮次执行表和可用测试环境。</p>
-<p>账号、数据、录屏与设备条件。</p>
+<p>设备、浏览器和录屏条件。</p>
 <p>若开展方法试验，还需独立预览与密封答案。</p>
 </div>
 </div>
@@ -534,10 +532,10 @@ clicks: 2
 <div class="source">2026-10-16 固定快照 · <a href="/evidence/plate-work-readme.md" target="_blank">行动指南 · 三至五</a> · <a href="/evidence/plate-test-plan.md" target="_blank">总计划 · 1.1–1.7</a> · <a href="/evidence/plate-source-status.md" target="_blank">使用边界</a></div>
 
 <!--
-对应 Acquisition，清单帮助明确目标，指南提供操作和观察方法，模板帮助留下记录，脚本支持环境和页面检查。这些资源不是同一种东西，也不能单靠安装工具完成准备。
+对应获取测试工作产物，清单帮助明确目标，指南提供操作和观察方法，模板帮助留下记录，脚本支持环境和页面检查。这些资源不是同一种东西，也不能单靠安装工具完成准备。
 资料记录了步骤一点一到一点五的工具与流程准备，包括报告工具、测试源码 hash、Issue 与测试的关联、页面健康检查和指南。但来源状态明确说明部分验证有失败或范围限制，不能说所有检查全绿。
 健康检查主要发现页面加载、报错、四〇四和应有编辑器缺失，不证明所有编辑交互正常。hash 能识别测试源码变化，本身不证明测试设计正确。
-正式执行仍需确认分工、执行表、设备、数据和环境。若开展植入缺陷的方法试验，还要有隔离的预览和密封答案。这些在快照中仍是待确认事项。
+正式执行仍需确认分工、执行表、设备、浏览器、录屏和环境。若开展植入缺陷的方法试验，还要有隔离的预览和密封答案。这些在快照中仍是待确认事项。
 -->
 
 ---
@@ -573,13 +571,13 @@ clicks: 2
 </div>
 </div>
 
-<p class="claim">正式测试先记发现，完成整轮后再改产品代码。</p>
+<p class="claim">Plate 计划要求先记发现，完成整轮后再改产品代码。</p>
 <div class="source">2026-10-16 待执行安排 · <a href="/evidence/plate-test-guide.md" target="_blank">Tester pass · A session / Find notes / After a round</a> · <a href="/evidence/plate-work-readme.md" target="_blank">行动指南 · 二</a></div>
 
 <!--
 计划中的一场测试，是对一个页面和范围，在指定浏览器内开展的计时录屏访问。测试者现场选择下一步，并观察光标、选择、焦点、菜单位置和布局。发现异常时记录录屏时间点，不能为了恢复焦点而补点鼠标，掩盖异常。
 如果这一轮使用带已知问题的预览，整轮结束后再到正常 Beta 复查，区分人为植入的问题与正常产品的问题。可复现的异常整理成 Issue 草稿，人工核对预期和证据后发布。
-资料要求先完成整轮场次，再进入修复，避免正式测试途中改产品导致后续页面面对不同版本。这里讲的是快照中的安排，没有报告已经执行的次数、通过率或缺陷数。
+资料要求先完成整轮场次，再进入修复，避免正式测试途中改产品导致后续页面面对不同版本。这是 Plate 本轮计划的安排，不是 STEP 规定的统一修复时机；快照没有报告这些场次已经执行的次数、通过率或缺陷数。
 -->
 
 ---
@@ -592,7 +590,7 @@ clicks: 2
 
 # Plate 的评价与改进
 
-<p class="lede">对应 M2 / M3 · 评价软件问题，也评价测试方法是否有效。</p>
+<p class="lede">主要对应 M3 · 评价软件问题，也评价测试过程与方法。</p>
 
 <div class="pair">
 <div>
@@ -613,10 +611,10 @@ clicks: 2
 <div class="source">2026-10-16 方案快照，无方法优劣结论 · <a href="/evidence/plate-test-plan.md" target="_blank">总计划 · Round 1's planted-bug trial / 1.9–1.11</a> · <a href="/evidence/plate-test-guide.md" target="_blank">Rechecks</a></div>
 
 <!--
-M2 检查目标与风险是否遗漏，不能只看已执行用例通过。植入的已知问题如果没有被发现，可以提示方法或场景存在缺口，但不能代表所有真实风险。
+植入已知问题并比较发现效果，主要是在评价测试方法，属于 M3 的过程评价。页面范围表和 Rechecks 可以帮助检查执行遗漏，但现有资料没有完整的需求、设计目标到测试的覆盖对应，不能据此声称完整实施了 M2。未检出已知问题可以提示方法或场景存在缺口，不能代表所有真实风险。
 M3 同时评价产品与测试过程。产品方面，在正常 Beta 复查并确认问题。过程方面，方案准备带已知 Bug 的独立预览和密封答案，在相同时间、浏览器安排和记录条件下比较候选方法与自由探索，由独立评分者对照答案。这个试验在快照中仍待执行，没有方法优劣结论。
 确认问题后，要修复并补充能检出缺陷的测试。人工复测只有在测试存在、未跳过、源码身份匹配，并且 CI 在缺陷对应层级或更高层级覆盖后，才按计划减少。浏览器层问题还需要覆盖该问题涉及的浏览器；只有脚本或只有本地通过都不够。测试变化、被删除或失去门禁时，还需要重新检查是否恢复人工复测。
-这不等于减少所有探索时间。修复进入 Beta 后才能进入下一轮，根据结果更新范围、目标、资源与安排，形成对 P 和 A 的反馈。以上是计划和课堂分析，不是已完成的项目收益。
+这不等于减少所有探索时间。修复进入 Beta 后才能进入下一轮，根据结果更新范围、目标、资源与安排，形成对 P 和 A 的反馈。以上是根据方案对应模型活动的解释，不是已完成的项目收益。
 -->
 
 ---
