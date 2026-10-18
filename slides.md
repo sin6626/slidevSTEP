@@ -452,31 +452,32 @@ glowSeed: 1319
 clicks: 1
 ---
 
-# Plate 为什么还需要人工检查？
+# Plate 项目重构背景
 
-<p class="lede">已有测试之外，仍要寻找复杂编辑交互中遗漏的问题。</p>
+<p class="lede">Plate 富文本编辑器正在重构，团队为多个组件与编辑交互制定测试计划。</p>
 
 <div class="pair">
 <div>
-<h2>问题不只在单个按钮</h2>
-<p>操作顺序、状态组合与真实输入，<br>可能触发现有测试没有覆盖的行为。</p>
-<p>重点观察光标、选区、焦点、菜单和布局。</p>
+<h2>项目背景</h2>
+<p>重构涉及组件及其编辑行为。</p>
+<p>光标、选区、焦点、菜单和布局，<br>都可能随操作顺序而变化。</p>
 </div>
 <div v-click="1">
-<h2>把发现变成持续保护</h2>
-<p>用有组织的人工探索发现问题，<br>修复后用相应测试防止再次出现。</p>
-<p>也要评价测试方法，调整下一轮安排。</p>
+<h2>测试任务</h2>
+<p>对照原有版本，检查共有功能是否保持。</p>
+<p>单独检查新增功能是否符合预期。</p>
+<p>按计划记录问题、修复并补充测试。</p>
 </div>
 </div>
 
-<p class="claim">用 STEP 串起：规划 → 资源准备 → 执行与评价。</p>
-<div class="source">以下以 PR 对应版本为准（2026-10-16） · <a href="https://github.com/udecode/plate/pull/5175" target="_blank">PR #5175</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L191" target="_blank">前期试验</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L18" target="_blank">测试指南</a></div>
+<p class="claim">先看团队的原计划，再用 STEP 分析这些工作。</p>
+<div class="source">以下以 PR 对应版本为准（2026-10-16） · <a href="https://github.com/udecode/plate/pull/5175" target="_blank">PR #5175</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L7" target="_blank">页面范围与测试规则</a></div>
 
 <!--
-Plate 这一轮为什么还要人工检查？现有测试不代表已经覆盖真实编辑中的所有操作顺序、状态组合和输入途径。PR 的前期调查与试验发现，历史缺陷往往需要特定步骤才能触发，因此方案选择计时录屏，让测试者根据现场观察决定下一步。
-这不是抛弃自动化测试。未知问题通过探索寻找，已知问题通过明确步骤复查；确认的问题修复后，要补能检出它的测试，并核对测试是否在 CI 中形成有效保护。
-下面四页对应 STEP 的测试规划、资源准备、执行与评价。我们用这个框架理解实践，不声称团队正式采用了完整 STEP，也不能由这轮重构后的测试倒推需求阶段已经实施预防性测试。
-以下内容均以 PR #5175 的固定版本 93bc5098cb2116a5ebade694f3706b1e9139499d 为准，资料日期为二〇二六年十月十六日。规则已经交付，首轮人工执行与后续收益尚不能据此写成完成结果，也不代表今天团队的全部进度。
+Plate 是富文本编辑器。这轮重构涉及多个组件与编辑交互，测试既要检查已有共有行为是否保持，也要检查新增行为是否符合预期。
+共有功能的参考来源包括上游 Slate 示例和正式版 Plate。新增功能单独分配测试场次，不能把重构版新增的功能差异直接算作缺陷。与其他编辑器的能力差距则作为提案评价。
+团队在 PR #5175 中制定了这轮测试的工作计划，包含准备工具和规则、开展首轮测试、评价方法、修复以及后续轮次。下一页先保留原计划的编号，再沿着首轮顺序解释 STEP 三个阶段和八项主要活动。
+以下状态均以固定版本 93bc5098cb2116a5ebade694f3706b1e9139499d 为准，资料日期为二〇二六年十月十六日。我们用 STEP 理解这些工作体现的思想，不声称团队明确按照 STEP 命名设计，也不能由重构后的测试倒推已完整实施全生命周期预防性测试。
 -->
 
 ---
@@ -487,34 +488,38 @@ glowSeed: 1420
 clicks: 2
 ---
 
-# Planning：明确范围与策略
+# Plate 测试工作计划
 
-<p class="lede">制定策略 · 范围与规则已制定，首轮执行表仍待编排。</p>
+<p class="lede">保留 PR 原编号 · 首轮先准备，再执行、评价与修复。</p>
 
 <div class="pair">
 <div>
-<h2>测什么，按什么判断？</h2>
-<p>已有功能对照 Slate 或正式版 Plate。</p>
-<p>Plite、Plate 新功能单独检查预期行为。</p>
-<p>与其他编辑器的能力差距，<br>先作为提案评估，不直接算 Bug。</p>
+<h2>已交付的工具与规则</h2>
+<p>1.1 修正问题报告的对照基准</p>
+<p>1.2 输出测试源码 hash</p>
+<p>1.3 建立 Issue 与回归测试关联规则</p>
+<p>1.4 编写页面清单与加载检查脚本</p>
+<p>1.5 编写测试人员指南</p>
 </div>
 <div v-click="1">
-<h2>怎样安排一轮？</h2>
-<p>按既定顺序检查，再进入修复。</p>
-<p>已有功能每页 8 分钟，新功能 6 分钟。</p>
-<p>浏览器按页面错开，逐轮轮换；<br>执行表写清页面、方法组和时间。</p>
+<h2>首轮待执行工作</h2>
+<p>1.6 准备植入缺陷的试验环境</p>
+<p>1.7 编写首轮测试计划</p>
+<p>1.8 执行首轮测试</p>
+<p>1.9 评价首轮方法试验</p>
+<p>1.10 修复问题并补充测试</p>
+<p>1.11 汇总结果，作阶段决策</p>
 </div>
 </div>
 
-<p v-click="2" class="claim">先明确范围、对照与安排，再开始全面检查。</p>
-<div class="source"><a href="https://github.com/udecode/plate/pull/5175" target="_blank">PR #5175</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L18" target="_blank">范围与场次规则</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L53" target="_blank">轮次准备</a></div>
+<p v-click="2" class="small accent">后续：2.1 接入浏览器回归 CI，2.2 评价改动，3.1～3.3 开展后续轮次或交接。</p>
+<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L220" target="_blank">原计划 · Phase 1 · 1.1～1.11</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L249" target="_blank">Phase 2 / Phase 3</a></div>
 
 <!--
-这一页对应 STEP 的 Plan the Strategy，把整体策略落实到具体轮次。PR 已规定范围和方法，不是只留下一个“准备测试”的模糊目标。
-项目的既定顺序是上游 Slate 示例、Plate 共有功能回归、Plite 新增功能、Plate 新增功能、与其他编辑器的能力差距，完成整轮测试后再进入修复。Plate 文档中的 P1 到 P6 是这套优先顺序，不是 STEP 的 P1 总体计划、P2 详细计划，所以正文不使用这组代号。
-共有行为有对照页面。新功能要单独检查其预期，不能把新功能造成的版本差异直接当缺陷；与其他编辑器的能力差距则作为提案交由判断，不全是 Bug。
-每次访问一个页面的一个范围，只用一个浏览器。已有功能八分钟，新增功能六分钟；页面在 Chrome、Safari、Firefox 和 iPhone 上错开安排，下一轮各向后轮换。这不是每个页面在每一轮都测四遍。
-详细执行表还需把每个页面和范围分配到场次，写清浏览器、方法组、时间以及已知问题复查。固定版本的计划步骤一点七仍未完成，因此这里区分已经制定的策略与尚未编排完成的首轮执行表。
+先看同事原计划的顺序和交付状态。固定版本将一点一到一点五标为完成，交付的是工具与规则，不代表首轮人工测试已经完成。
+一点一修正问题报告中两份录像的对照基准标签。一点二输出每条测试自身的源码 hash，便于识别测试是否变化；hash 不证明测试正确。一点三要求修复测试关联已发布的 Issue，并记录覆盖它的测试路径、标题和 hash。一点四交付页面清单和加载检查脚本。一点五交付测试人员指南。
+点击后看待执行的一点六到一点一一。一点六在独立预览中植入已知缺陷并隔离答案；私有预览不可行时，方法试验无结论，首轮改在正常 Beta 上自由探索。一点七编写实际首轮执行表。一点八执行、录屏、记录，并在整轮后复现发现。一点九由独立盲评者对照封存答案评价方法试验，必须在修复前完成。一点一零发布确认的问题、修复并补充能检出问题的测试。一点一一汇总发现与时间投入，形成阶段决策。
+再次点击补充后续安排。二点一计划在第一个相应修复中接入 Plate 浏览器回归 CI 门禁，当前仍待完成。二点二根据证据决定保留、隔离还是撤回改动。三点一到三点三准备下一轮、执行与修复，再按条件重复或交接。后面三页主要沿首轮顺序分析，不用后续步骤跳跃拼接八项活动。
 -->
 
 ---
@@ -525,35 +530,34 @@ glowSeed: 1521
 clicks: 2
 ---
 
-# Acquisition：准备测试资源
+# 测试规划
 
-<p class="lede">获取测试工作产物 · 页面、工具与记录规则已交付。</p>
+<p class="lede">Planning · 从 PR 总计划，落实到首轮执行安排。</p>
 
 <div class="pair">
 <div>
-<h2>已有的资源</h2>
-<p>页面清单与加载检查脚本 page-health。</p>
-<p>测试指南、录屏与异常时间点记录规则。</p>
-<p>已制定 Issue 与测试关联规则，<br>记录路径、标题与源码 hash。</p>
+<h2><span class="accent">P1</span> 制定总体测试计划</h2>
+<p>对应制定这份 PR 总计划。</p>
+<p>确定测试范围、对照来源、<br>优先顺序与轮次规则。</p>
+<p class="small muted mt-5">总体规则已制定</p>
 </div>
 <div v-click="1">
-<h2>准备的是两种测试</h2>
-<p>未知问题：有范围、有观察目标的探索。</p>
-<p>已知问题：保留明确步骤，逐项复查。</p>
-<p>不为每个未知问题预先写死操作脚本。</p>
+<h2><span class="accent">P2</span> 制定详细测试计划</h2>
+<p>对应 1.7 编写首轮计划。</p>
+<p>落实页面、浏览器、方法组、<br>时间与已知问题复查安排。</p>
+<p class="small muted mt-5">首轮执行表待编排</p>
 </div>
 </div>
 
-<p v-click="2" class="claim">尚待准备：植入缺陷的独立预览，以及首轮执行表。</p>
-<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L222" target="_blank">已完成的资源准备</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L47" target="_blank">已知问题复查</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L242" target="_blank">待准备事项</a></div>
+<p v-click="2" class="claim">总体计划确定方向，详细计划安排这一轮怎么做。</p>
+<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L220" target="_blank">PR 总计划</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L243" target="_blank">1.7 首轮计划</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L53" target="_blank">轮次编排规则</a></div>
 
 <!--
-这一页对应 Acquire the Testware。测试工作产物不是只安装一个测试工具，而是让目标、测试方法、数据和记录能够实际使用。
-固定版本把步骤一点一到一点五标为已完成：页面清单与 page-health 脚本、测试人员指南、问题报告规则、Issue 与测试的关联，以及测试源码 hash。指南规定了录屏、异常时间点和已知问题复查的记录方法。
-page-health 的清单模式给出需要测试的页面与对照地址；加载检查模式发现页面报错、Not Found、失败状态或应有编辑器缺失。页面能加载不等于所有编辑交互通过，资源已经交付也不等于各项检查全部成功。
-这套资源同时服务于两类活动：未知问题采用现场探索，测试者有范围和观察目标，但下一步由现场情况决定；已知问题则保留能复现问题的明确步骤。系统化测试可以组织探索式测试，并不要求把每次未知探索预写成固定脚本。
-Issue 编号关联测试的路径、标题与源码 hash，便于核对保护它的测试是否变化。hash 只能识别源码身份，本身不证明测试设计正确。
-步骤一点六的独立植入缺陷预览和步骤一点七的首轮执行表仍未完成。植入答案须与测试者隔离，不向测试者透露哪些页面带有植入问题。
+这一页对应 Plan the Strategy。P1 首先体现在制定整份 PR 总计划这件事本身，不是只挑出一点五的指南编写，也不是把某个工具步骤单独叫总体计划。
+这份计划确定了哪些页面和行为要测、共有行为对照什么、按照什么优先顺序安排、如何组织轮次，以及执行后如何评价和处理问题。它提供整轮测试的方向和规则。
+P2 则直接对应一点七的首轮详细计划。负责人还需把页面与范围逐项列入场次表，分配浏览器、方法组和时间，安排已知问题复查，并预留准备、休息、记录和其他检查时间。
+已有共有行为的场次八分钟，新增功能六分钟。页面在 Chrome、Safari、Firefox 和 iPhone 上错开，每一轮向后轮换。具体执行表仍待编排，规则已经写好不代表实际场次已经执行。
+这两个层次是根据 STEP 活动分析其工作内容。原计划自身也使用 P1 等代号表示页面测试优先级，两套代号含义不同，讲解时不要混淆。我们在本页的 P1 和 P2 专指 STEP 活动。
 -->
 
 ---
@@ -564,40 +568,41 @@ glowSeed: 1622
 clicks: 2
 ---
 
-# Measurement：执行与记录
+# 测试资源准备
 
-<p class="lede">对应 M1 · 规则已制定，以下流程仍待首轮执行验证。</p>
+<p class="lede">Acquisition · 沿 1.1～1.6，把测试目标与方法落实为可用资源。</p>
 
 <div class="steps course-steps activity-steps">
 <div>
-<div class="step-no">01</div>
-<h2>计时录屏探索</h2>
-<div class="english">按页面、范围与浏览器</div>
-<p>现场决定下一步操作，<br>记录异常及录屏时间点。</p>
+<div class="step-no">A1</div>
+<h2>列出测试目标</h2>
+<div class="english">1.4 页面清单 · 已交付</div>
+<p>列出要测的页面、范围，<br>以及对应的参考页面。</p>
 </div>
 <div v-click="1">
-<div class="step-no">02</div>
-<h2>整轮后确认</h2>
-<div class="english">正常 Beta 复现与 Issue</div>
-<p>核对预期和复现证据，<br>发布确认的问题。</p>
+<div class="step-no">A2</div>
+<h2>设计测试</h2>
+<div class="english">1.5 测试指南 · 已交付</div>
+<p>规定操作方法、观察重点<br>与记录方式。</p>
 </div>
 <div v-click="2">
-<div class="step-no">03</div>
-<h2>修复并补测试</h2>
-<div class="english">保护对应的已知问题</div>
-<p>补上能检出问题的测试。<br>CI 满足覆盖条件后，<br>才退出对应人工复查。</p>
+<div class="step-no">A3</div>
+<h2>实现计划与设计</h2>
+<div class="english">1.6 试验环境 · 待准备</div>
+<p>搭建可执行的独立预览，<br>准备植入的缺陷与数据。</p>
 </div>
 </div>
 
-<p class="claim">计划接入浏览器回归 CI 门禁，让已知问题获得持续保护。</p>
-<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L18" target="_blank">场次与记录</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L47" target="_blank">退出人工复查的条件</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L251" target="_blank">待接入的 CI 门禁</a></div>
+<p class="small muted mt-5">1.1～1.3 提供配套规则：问题报告、源码追踪、Issue 与测试关联。</p>
+<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L222" target="_blank">1.1～1.6 准备工作</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L7" target="_blank">页面清单与测试指南</a></div>
 
 <!--
-这一页以 M1 测量实际行为为入口，串起记录、确认与修复后的保护。正文讲的是已制定但尚待首轮实际执行验证的流程，不是这一轮已经完成的结果。
-测试者按页面、范围、浏览器和时长计时录屏，现场选择下一步。光标、选区、焦点、菜单位置和布局都是观察目标；不能随手补点鼠标来修好焦点而掩盖异常。
-正式场次进行时只记录发现，不一边测试一边改产品。整轮结束后，到正常 Beta 复查异常，并结合对照来源确认预期，整理和发布能复现的问题，再进入修复。整轮后才修复是 Plate 本轮的安排，不是 STEP 强制所有项目遵守的统一时机。
-修复要补能检出该问题的测试，并关联 Issue。已知问题退出人工复查需要测试存在、未跳过、源码 hash 匹配，而且 CI 在该缺陷对应层级或更高层级形成有效门禁。浏览器层问题还须覆盖该问题要求的浏览器；测试变化时须重新证明能够检出修复前的缺陷。测试被删除、跳过或失去门禁，人工复查就恢复。
-固定版本的计划步骤二点一尚未接入 Plate 浏览器回归 CI 门禁，计划与第一个相应修复一起加入。因此不能说这一条回归闭环已经运行完成，也没有证据声称总体探索时间已经减少。减少的是满足条件的对应已知问题的人工复查。
+这一页对应 Acquire the Testware，按一点一到一点六这段连续的准备工作来理解。最直观的例子是先明确测试目标，再设计方法，随后准备能够实际执行的环境和数据。
+A1 对应一点四页面清单中明确测试页面、范围和参考来源的部分。页面是组织范围的一种方式，并不等于已经整理完整的需求与设计目标清单。页面加载检查也不能代替交互行为测试。
+A2 对应一点五指南中设计操作方法、观察重点和记录方式的部分。指南规定计时录屏、观察光标、选区、焦点、菜单和布局，也给出六种候选操作方法；六种方法是否保留仍待首轮对照试验决定。
+A3 以一点六的试验环境准备为例：建立独立预览，植入已知缺陷，准备页面分配和封存答案。固定版本中这一步仍未完成。它为后续人工执行和方法评价准备可使用的环境与数据。
+这些对应说明各步骤的一部分工作内容，不是把原计划强行一一配对。比如一点四已经实现了脚本，一点五编写并交付指南也包含 A3 的实现工作；不能把指南的全部工作只限定为 A2。A2 同时包括测试架构和环境设计，也不限于指南中的操作方法。
+一点一到一点三提供配套的问题报告、源码身份追踪和 Issue 与测试关联规则。源码 hash 只帮助识别测试变化，不能证明测试足够或测试正确。已交付的一点四和一点五，与待准备的一点六，状态在正文分别标明。
 -->
 
 ---
@@ -608,34 +613,41 @@ glowSeed: 1723
 clicks: 2
 ---
 
-# Measurement：评价与改进
+# 测试执行与评估
 
-<p class="lede">对应 M3 · 不只评价产品，也要检验测试方法是否有效。</p>
+<p class="lede">Measurement · 首轮 1.8～1.11 仍待执行，测量结果将反馈到下一轮。</p>
 
-<div class="pair">
+<div class="steps course-steps activity-steps">
 <div>
-<h2>已调整：清单方案</h2>
-<p>前期试验中，预写清单很少包含<br>历史缺陷的准确触发步骤。</p>
-<p>因此转向计时、录屏的现场探索；<br>明确步骤保留给已知问题复查。</p>
+<div class="step-no">M1</div>
+<h2>执行测试</h2>
+<div class="english">1.8 首轮执行</div>
+<p>实际操作并录屏，<br>记录异常与复查结果。</p>
 </div>
 <div v-click="1">
-<h2>待验证：六种操作</h2>
-<p>独立预览植入历史缺陷，答案保密。</p>
-<p>同等时间比较六种操作与自由探索，<br>独立评分后决定是否保留。</p>
+<div class="step-no">M2</div>
+<h2>检查测试集充分性</h2>
+<div class="english">核对目标与测试覆盖</div>
+<p>用页面、场次与复查记录<br>核对遗漏。<br><span class="small muted">完整覆盖校准仍需补充。</span></p>
+</div>
+<div v-click="2">
+<div class="step-no">M3</div>
+<h2>评价软件与测试过程</h2>
+<div class="english">1.9 方法评分 · 1.11 汇总决策</div>
+<p>评价测试方法的发现能力，<br>汇总本轮问题与时间投入。</p>
 </div>
 </div>
 
-<p v-click="2" class="claim">评价结果反馈到规划与资源准备，修复进入 Beta 后再开展下一轮。</p>
-<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L191" target="_blank">已完成的前期试验</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L206" target="_blank">待执行的方法比较</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L53" target="_blank">下一轮安排</a></div>
+<p class="small accent mt-5">1.10 修复并补测试，将结果反馈到开发与资源准备，再调整下一轮计划。</p>
+<div class="source"><a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/docs/plans/2026-10-15-regression-sweep.md#L244" target="_blank">1.8～1.11 执行、评价与修复</a> · <a href="https://github.com/udecode/plate/blob/93bc5098cb2116a5ebade694f3706b1e9139499d/.agents/rules/verify/references/tester-pass.md#L47" target="_blank">已知问题复查规则</a></div>
 
 <!--
-这页的核心联系是 M3：评价产品，也评价测试过程。左边是已经发生的方法调整，右边是尚未完成的试验，不能混成同一批测试结果。
-已经发生的部分是两次 AI 生成检查清单的试验。六十个“清单与历史缺陷”的配对中，只有一个包含该缺陷的准确触发步骤，共涉及二十四个不同历史缺陷。这衡量清单中是否写出了准确步骤，不是人工测试员只能发现六十个 Bug 中的一个，也不是人工执行清单的实际检出率。试验存在输入与环境条件限制，不能推出所有检查清单普遍无效。
-这些发现促使方案改为计时录屏、由测试者现场决定下一步，明确检查步骤则保留给已知问题。这个已经发生的调整本身就能说明测试方法需要评价。
-待执行部分是首轮的六动作对照试验。候选动作包括操作后继续输入、换位置再做、换操作途径、从边界开始、放到其他块中、改变滚动或窗口条件等。它们还没有被证明优于自由探索。
-方案让独立会话在隔离预览植入历史缺陷并保密答案，在相同时间、浏览器轮换和录屏条件下比较六动作与自由探索；分配尽量平衡，由独立盲评者核对发现。机会不足时结论不充分，需要重做；满足预定保留规则才保留候选方法。
-这主要对应 M3 的测试过程评价。已有页面表和复查表不能证明完成 M2 所要求的完整需求、设计目标到测试的覆盖校准，更不证明团队从需求阶段正式全程采用 STEP。
-评价结果反馈到 Planning 和 Acquisition，修改测试方法、指南和下一轮安排。修复进入 Beta 后再开始下一轮。这里没有已验证的方法优劣结论，也没有整体自动化收益或测试时间缩短的结论。
+这一页对应 Measure the Behavior，主要沿首轮一点八到一点一一展开。这些步骤在固定版本中仍待执行，不能把计划中的录屏、发现或方法评价写成实际结果。
+M1 对应一点八实际开展测试。测试者按首轮计划进行计时录屏，现场探索并记录异常时间点；整轮之后在正常 Beta 上复现发现，保留参考来源与实际结果。
+M2 检查测试集充分性，要把测试目标清单与测试对应起来，发现遗漏。原计划的页面清单、场次安排和已知问题复查记录可用于核对计划范围，但没有完整的需求与设计目标到测试的覆盖校准证据。因此这里说明如何联系 M2，同时明确仍需补充，不给它硬配一个任务编号。尤其不能把一点九的盲评直接称为 M2，那主要评价的是测试方法。
+M3 对应一点九和一点一一。一点九由独立盲评者对照封存的植入缺陷答案，比较六种候选操作与自由探索，在修复开始前作方法保留决策。一点一一按优先级、浏览器和操作方法汇总发现，以及每页每分钟发现与实际时间投入，形成阶段决策。这些分别体现评价测试过程和评价本轮软件表现。
+中间的一点一零根据发现修复并补充能检出问题的测试，是测量结果反馈到开发和测试资源准备，不属于 M1 的执行本身。修复前先发布确认的问题，使测试可以关联 Issue。测试退出对应人工复查还需要满足源码、有效门禁及相应浏览器覆盖等条件。
+评价结果用于调整计划、指南和下一轮安排；下一轮须等 Beta 已包含本轮修复再开展。后续的浏览器回归 CI 门禁仍待接入，本页没有实际通过数字、已验证的方法优劣或整体节省时间的结论。
 -->
 
 ---
